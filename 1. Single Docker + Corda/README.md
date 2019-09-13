@@ -9,7 +9,7 @@ This folder contains the following
 
 ### Dockerfile defining the image
 
-As the node runs within a container, several mount points are required:
+* As the node runs within a container, several mount points are required:
 
       CorDapps - CorDapps must be mounted at location /opt/corda/cordapps
       Certificates - certificates must be mounted at location /opt/corda/certificates
@@ -17,9 +17,9 @@ As the node runs within a container, several mount points are required:
       Logging - all log files will be written to location /opt/corda/logs
 
 
-### The official Corda 4 platform jar file
-### A node configuration or `node.conf` file
-### A entry point bash script to be executed when the container launches
+* The official Corda 4 platform jar file
+* A node configuration or `node.conf` file
+* A entry point bash script to be executed when the container launches
 
 ## Usage  
 Let us review the commands that are used to set up the Docker images and then run the container 
