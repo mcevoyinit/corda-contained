@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="6. Resources/image.png" alt="Corda" width="500">
+  <img src="6. Resources/image.png" alt="Corda" width="700" height="400">
 </p>
 
 ### Run a local Docker network
