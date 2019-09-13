@@ -1,0 +1,57 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: enm-notary-pv-claim
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  selector: 
+    matchLabels:
+      purpose: notary        
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: enm-notary-service
+spec:
+  selector:
+    app: enm-notary
+  ports:
+  - name: default
+    protocol: TCP
+    port: 30000
+    targetPort: 30000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: enm-notary-deployment
+  labels:
+    app: enm-notary
+spec:
+  replicas: 1   
+  selector:
+    matchLabels:
+      app: enm-notary
+  template:
+    metadata:
+      labels:
+        app: enm-notary
+    spec:
+      volumes:
+      - name: enm-notary-pv-storage
+        persistentVolumeClaim:
+          claimName: enm-notary-pv-claim      
+      containers:
+      - name: enm-notary
+        image: enm_notary:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 30000 
+        volumeMounts:
+          - mountPath: "/opt/corda/notary/persistent"
+            name: enm-notary-pv-storage  

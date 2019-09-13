@@ -1,0 +1,57 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: enm-signer-pv-claim
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  selector:
+    matchLabels:
+      purpose: signer
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: enm-signer-service
+spec:
+  selector:
+    app: enm-signer
+  ports:
+    - name: default
+      protocol: TCP
+      port: 50000
+      targetPort: 50000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: enm-signer-deployment
+  labels:
+    app: enm-signer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: enm-signer
+  template:
+    metadata:
+      labels:
+        app: enm-signer
+    spec:
+      volumes:
+        - name: enm-signer-pv-storage
+          persistentVolumeClaim:
+            claimName: enm-signer-pv-claim
+      containers:
+        - name: enm-signer
+          image: enm_signer:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 50000
+          volumeMounts:
+            - mountPath: "/opt/corda/signer/persistent"
+              name: enm-signer-pv-storage

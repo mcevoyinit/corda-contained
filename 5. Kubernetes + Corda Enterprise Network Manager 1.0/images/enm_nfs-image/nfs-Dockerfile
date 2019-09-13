@@ -1,0 +1,5 @@
+FROM stilliard/pure-ftpd:hardened
+
+ENV FTP_USER_NAME=user
+ENV FTP_USER_PASS=password
+ENV FTP_USER_HOME=/home/ftpusers/user

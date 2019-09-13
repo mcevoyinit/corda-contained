@@ -1,0 +1,14 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: enm-identity-manager-pv-volume
+  labels:
+    purpose: identity-manager
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/Users/ericmcevoy/cordapps/corda-enterprise-kubernetes/volumes/identity-manager"

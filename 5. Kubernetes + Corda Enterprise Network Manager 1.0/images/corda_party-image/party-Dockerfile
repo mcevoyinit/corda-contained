@@ -1,0 +1,35 @@
+# Base image from (http://phusion.github.io/baseimage-docker)
+FROM openjdk:8u151-jre-alpine
+
+RUN apk upgrade --update && \
+    apk add --update --no-cache bash iputils nfs-utils nss curl netcat-openbsd lftp openssh-client openssh-server && \
+    rm -rf /var/cache/apk/* && \
+    # Add user to run the app && \
+    addgroup corda && \
+    adduser -G corda -D -s /bin/bash corda && \
+    # Create /opt/corda/party directory && \
+	mkdir -p /opt/corda/party/persistent
+
+ADD --chown=corda:corda corda.jar /opt/corda/party/corda.jar
+ADD --chown=corda:corda startParty.sh /opt/corda/party/startParty.sh
+
+# Permissioning
+RUN chown -R corda:corda /opt/corda
+RUN dos2unix /opt/corda/party/startParty.sh /opt/corda/party/startParty.sh
+RUN chmod +x /opt/corda/party/startParty.sh
+
+# Working directory for the Party
+WORKDIR /opt/corda/party
+ENV HOME=/opt/corda/party
+USER corda
+
+# P2P
+EXPOSE 40000
+# RPC
+EXPOSE 30004
+# H2 DB
+EXPOSE 55555
+
+
+# Start it
+CMD ./startParty.sh

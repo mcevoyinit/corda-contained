@@ -1,0 +1,30 @@
+# Base image from (http://phusion.github.io/baseimage-docker)
+FROM openjdk:8u151-jre-alpine
+
+RUN apk upgrade --update && \
+    apk add --update --no-cache bash iputils nfs-utils nss curl netcat-openbsd && \
+    rm -rf /var/cache/apk/* && \
+    # Add user to run the app && \
+    addgroup corda && \
+    adduser -G corda -D -s /bin/bash corda && \
+    # Create /opt/corda/signer directory && \
+	mkdir -p /opt/corda/signer/persistent && \
+	mkdir -p /opt/corda/signer/persistent/logs
+
+
+ADD --chown=corda:corda signer.jar /opt/corda/signer/signer.jar
+ADD --chown=corda:corda bcpkix-jdk15on-1.60.jar /opt/corda/signer/bcpkix-jdk15on-1.60.jar
+ADD --chown=corda:corda bcprov-jdk15on-1.60.jar /opt/corda/signer/bcprov-jdk15on-1.60.jar
+
+# Permissioning
+RUN chown -R corda:corda /opt/corda
+
+# Working directory for Identity manager
+WORKDIR /opt/corda/signer
+ENV HOME=/opt/corda/signer
+USER corda
+
+EXPOSE 50000
+
+# Start it
+CMD java -jar signer.jar --config-file=./persistent/signer.conf

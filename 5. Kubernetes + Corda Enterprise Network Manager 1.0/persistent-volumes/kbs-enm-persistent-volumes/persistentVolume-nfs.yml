@@ -1,0 +1,14 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: enm-nfs-pv-volume
+  labels:
+    purpose: nfs
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/Users/ericmcevoy/cordapps/corda-enterprise-kubernetes/volumes/nfs"

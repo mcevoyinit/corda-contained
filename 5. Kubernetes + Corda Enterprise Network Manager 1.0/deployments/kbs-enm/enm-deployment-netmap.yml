@@ -1,0 +1,57 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: enm-netmap-pv-claim
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  selector: 
+    matchLabels:
+      purpose: netmap        
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: enm-netmap-service
+spec:
+  selector:
+    app: enm-netmap
+  ports:
+  - name: default
+    protocol: TCP
+    port: 20000
+    targetPort: 20000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: enm-netmap-deployment
+  labels:
+    app: enm-netmap
+spec:
+  replicas: 1   
+  selector:
+    matchLabels:
+      app: enm-netmap
+  template:
+    metadata:
+      labels:
+        app: enm-netmap
+    spec:
+      volumes:
+      - name: enm-netmap-pv-storage
+        persistentVolumeClaim:
+          claimName: enm-netmap-pv-claim      
+      containers:
+      - name: enm-netmap
+        image: enm_netmap:latest
+        imagePullPolicy: Never       
+        ports:
+        - containerPort: 20000 
+        volumeMounts:
+          - mountPath: "/opt/corda/netmap/persistent"
+            name: enm-netmap-pv-storage  

@@ -1,0 +1,30 @@
+# Base image from (http://phusion.github.io/baseimage-docker)
+FROM openjdk:8u151-jre-alpine
+
+RUN apk upgrade --update && \
+    apk add --update --no-cache bash iputils nfs-utils nss curl netcat-openbsd lftp openssh-client openssh-server && \
+    rm -rf /var/cache/apk/* && \
+    # Add user to run the app && \
+    addgroup corda && \
+    adduser -G corda -D -s /bin/bash corda && \
+    # Create /opt/corda/notary directory && \
+	mkdir -p /opt/corda/notary/persistent
+
+ADD --chown=corda:corda corda.jar /opt/corda/notary/corda.jar
+ADD --chown=corda:corda startNotary.sh /opt/corda/notary/startNotary.sh
+
+# Permissioning
+RUN chown -R corda:corda /opt/corda
+RUN dos2unix /opt/corda/notary/startNotary.sh /opt/corda/notary/startNotary.sh
+RUN chmod +x /opt/corda/notary/startNotary.sh
+
+# Working directory for Notary
+WORKDIR /opt/corda/notary
+ENV HOME=/opt/corda/notary
+USER corda
+
+EXPOSE 30000
+
+
+# Start it
+CMD ./startNotary.sh
