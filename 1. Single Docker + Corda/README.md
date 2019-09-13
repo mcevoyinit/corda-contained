@@ -31,4 +31,4 @@ List all images and run the image you have just created
           docker images 
           docker run corda_party
      
-At this point we have successfully executed a flow between multiple Nodes on the newly created test network!  
+At this point we have successfully build and ran a Corda node inside a Docker container!  
