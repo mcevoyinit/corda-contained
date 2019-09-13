@@ -1,9 +1,9 @@
 Docker Compose + Corda
 ========
 
-Start the network by running `docker-compose up`.
+In this part we will provision a four-node network with two conventional nodes (_Alice_, _Bob_), a business network operator node (_Charly_) and a notary (_Notary_). All nodes are running the Business Network Membership Cordapp.
 
-This will provision a four-node network with two conventional nodes (_Alice_, _Bob_), a business network operator node (_Charly_) and a notary (_Notary_).
+Start the network by running `docker-compose up`.
 
 All nodes can be accessed via SSH with the user name `user` and password `secret`.
 
