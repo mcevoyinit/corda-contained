@@ -10,10 +10,10 @@ This folder contains the following
 * Dockerfile needed to assemble the image
 * As the node runs within a container, several mount points are required:
 
-     CorDapps - CorDapps must be mounted at location /opt/corda/cordapps
-     Certificates - certificates must be mounted at location /opt/corda/certificates
-     Config - the node config must be mounted at location /etc/corda/node.config
-     Logging - all log files will be written to location /opt/corda/logs
+          CorDapps - CorDapps must be mounted at location /opt/corda/cordapps
+          Certificates - certificates must be mounted at location /opt/corda/certificates
+          Config - the node config must be mounted at location /etc/corda/node.config
+          Logging - all log files will be written to location /opt/corda/logs
 
 * The official Corda 4 platform jar file
 * A node configuration or `node.conf` file
