@@ -22,10 +22,13 @@ This folder contains the following
 ## Usage  
 Let us review the commands that are used to set up the Docker images and then run the container 
 
-The following commands can be found in the *build-docker-nodes* script file as well, where it will run the commands in the correct order. But let us review the commands and what they do.  
+Build the Dockerfile into an executable image
 
+          docker build -t corda_party . -f party-Dockerfile $NO_CACHE
+          
+List all images and run the image you have just created
 
+          docker images 
+          docker run corda_party
+     
 At this point we have successfully executed a flow between multiple Nodes on the newly created test network!  
-
-Please feel free and try other CorDapps at this point instead of the simple Yo-app.  
-[Corda samples](https://github.com/corda/samples)
