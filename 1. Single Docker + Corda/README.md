@@ -7,8 +7,7 @@ In this first example we will build and run a simple Docker image of a Corda nod
 This folder contains the following
 
 
-### Dockerfile defining the image
-
+* Dockerfile defining the image
 * As the node runs within a container, several mount points are required:
 
       CorDapps - CorDapps must be mounted at location /opt/corda/cordapps
