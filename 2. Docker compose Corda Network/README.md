@@ -1,9 +1,12 @@
-BNO Demo
+Docker Compose + Corda
 ========
 
 Start the network by running `docker-compose up`.
+
 This will provision a four-node network with two conventional nodes (_Alice_, _Bob_), a business network operator node (_Charly_) and a notary (_Notary_).
+
 All nodes can be accessed via SSH with the user name `user` and password `secret`.
+
 Nodes expose ports to the host system, so a connection can be made like this: `ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no user@localhost -p 10004`.
 
 Participants
