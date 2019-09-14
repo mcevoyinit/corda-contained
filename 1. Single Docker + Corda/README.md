@@ -32,3 +32,4 @@ List all images and run the image you have just created
           docker run corda_party
      
 At this point we have successfully build and ran a Corda node inside a Docker container!  
+
