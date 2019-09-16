@@ -1,0 +1,76 @@
+[INFO ] 2019-09-16T11:41:45,938Z [pool-2-thread-1] Signer.signNetworkMaps - Started signing of the network map {}
+[INFO ] 2019-09-16T11:41:47,623Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Current network map for network 'Public Network' is up-to-date {}
+[INFO ] 2019-09-16T11:41:47,630Z [pool-2-thread-1] Signer.signNetworkMaps - End of network map signing {}
+[INFO ] 2019-09-16T11:42:00,942Z [pool-2-thread-1] Signer.signNetworkMaps - Started signing of the network map {}
+[INFO ] 2019-09-16T11:42:01,098Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Current network map for network 'Public Network' is up-to-date {}
+[INFO ] 2019-09-16T11:42:01,100Z [pool-2-thread-1] Signer.signNetworkMaps - End of network map signing {}
+[INFO ] 2019-09-16T11:42:15,940Z [pool-2-thread-1] Signer.signNetworkMaps - Started signing of the network map {}
+[INFO ] 2019-09-16T11:42:16,080Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Signed new network map for network 'Public Network' {}
+[INFO ] 2019-09-16T11:42:16,132Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Persisted new network map for network 'Public Network' : NetworkMap {
+  nodeInfoHashes {
+    11077F6EC090D56C3DB8A5F54F49E29EA0A9B5EAA51BE2471221891B2DC5C287
+    08918B23B16D86EF01A5BD1E04343CD1F71899A3D7A11A5DAA692131E96FB4EE
+    61B032A1B6ADFB3F83182BDF0515855011F8BD3819B31C16F1C2C638044D75EC
+    
+  }
+  networkParameterHash=C0C178AB56FC6BA33F7DAC809C8168D7A86A325A3C57767FF87DF4C4C1E7F051
+  parametersUpdate=null
+} {}
+[INFO ] 2019-09-16T11:42:16,133Z [pool-2-thread-1] Signer.signNetworkMaps - End of network map signing {}
+[INFO ] 2019-09-16T11:42:30,941Z [pool-2-thread-1] Signer.signNetworkMaps - Started signing of the network map {}
+[INFO ] 2019-09-16T11:42:30,991Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Current network map for network 'Public Network' is up-to-date {}
+[INFO ] 2019-09-16T11:42:30,992Z [pool-2-thread-1] Signer.signNetworkMaps - End of network map signing {}
+[INFO ] 2019-09-16T11:42:45,942Z [pool-2-thread-1] Signer.signNetworkMaps - Started signing of the network map {}
+[INFO ] 2019-09-16T11:42:45,989Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Current network map for network 'Public Network' is up-to-date {}
+[INFO ] 2019-09-16T11:42:45,990Z [pool-2-thread-1] Signer.signNetworkMaps - End of network map signing {}
+[INFO ] 2019-09-16T11:43:00,943Z [pool-2-thread-1] Signer.signNetworkMaps - Started signing of the network map {}
+[INFO ] 2019-09-16T11:43:00,984Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Current network map for network 'Public Network' is up-to-date {}
+[INFO ] 2019-09-16T11:43:00,985Z [pool-2-thread-1] Signer.signNetworkMaps - End of network map signing {}
+[INFO ] 2019-09-16T11:43:15,963Z [pool-2-thread-1] Signer.signNetworkMaps - Started signing of the network map {}
+[INFO ] 2019-09-16T11:43:16,007Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Current network map for network 'Public Network' is up-to-date {}
+[INFO ] 2019-09-16T11:43:16,008Z [pool-2-thread-1] Signer.signNetworkMaps - End of network map signing {}
+[INFO ] 2019-09-16T11:43:30,963Z [pool-2-thread-1] Signer.signNetworkMaps - Started signing of the network map {}
+[INFO ] 2019-09-16T11:43:31,016Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Current network map for network 'Public Network' is up-to-date {}
+[INFO ] 2019-09-16T11:43:31,017Z [pool-2-thread-1] Signer.signNetworkMaps - End of network map signing {}
+[INFO ] 2019-09-16T11:43:45,971Z [pool-2-thread-1] Signer.signNetworkMaps - Started signing of the network map {}
+[INFO ] 2019-09-16T11:43:46,014Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Current network map for network 'Public Network' is up-to-date {}
+[INFO ] 2019-09-16T11:43:46,015Z [pool-2-thread-1] Signer.signNetworkMaps - End of network map signing {}
+[INFO ] 2019-09-16T11:44:00,971Z [pool-2-thread-1] Signer.signNetworkMaps - Started signing of the network map {}
+[INFO ] 2019-09-16T11:44:01,010Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Current network map for network 'Public Network' is up-to-date {}
+[INFO ] 2019-09-16T11:44:01,010Z [pool-2-thread-1] Signer.signNetworkMaps - End of network map signing {}
+[INFO ] 2019-09-16T11:44:15,974Z [pool-2-thread-1] Signer.signNetworkMaps - Started signing of the network map {}
+[INFO ] 2019-09-16T11:44:16,020Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Current network map for network 'Public Network' is up-to-date {}
+[INFO ] 2019-09-16T11:44:16,021Z [pool-2-thread-1] Signer.signNetworkMaps - End of network map signing {}
+[INFO ] 2019-09-16T11:44:30,974Z [pool-2-thread-1] Signer.signNetworkMaps - Started signing of the network map {}
+[INFO ] 2019-09-16T11:44:31,015Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Current network map for network 'Public Network' is up-to-date {}
+[INFO ] 2019-09-16T11:44:31,016Z [pool-2-thread-1] Signer.signNetworkMaps - End of network map signing {}
+[INFO ] 2019-09-16T11:44:45,975Z [pool-2-thread-1] Signer.signNetworkMaps - Started signing of the network map {}
+[INFO ] 2019-09-16T11:44:46,020Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Current network map for network 'Public Network' is up-to-date {}
+[INFO ] 2019-09-16T11:44:46,021Z [pool-2-thread-1] Signer.signNetworkMaps - End of network map signing {}
+[INFO ] 2019-09-16T11:45:00,975Z [pool-2-thread-1] Signer.signNetworkMaps - Started signing of the network map {}
+[INFO ] 2019-09-16T11:45:01,006Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Current network map for network 'Public Network' is up-to-date {}
+[INFO ] 2019-09-16T11:45:01,007Z [pool-2-thread-1] Signer.signNetworkMaps - End of network map signing {}
+[INFO ] 2019-09-16T11:45:15,975Z [pool-2-thread-1] Signer.signNetworkMaps - Started signing of the network map {}
+[INFO ] 2019-09-16T11:45:16,017Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Current network map for network 'Public Network' is up-to-date {}
+[INFO ] 2019-09-16T11:45:16,018Z [pool-2-thread-1] Signer.signNetworkMaps - End of network map signing {}
+[INFO ] 2019-09-16T11:45:30,975Z [pool-2-thread-1] Signer.signNetworkMaps - Started signing of the network map {}
+[INFO ] 2019-09-16T11:45:31,013Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Current network map for network 'Public Network' is up-to-date {}
+[INFO ] 2019-09-16T11:45:31,014Z [pool-2-thread-1] Signer.signNetworkMaps - End of network map signing {}
+[INFO ] 2019-09-16T11:45:45,976Z [pool-2-thread-1] Signer.signNetworkMaps - Started signing of the network map {}
+[INFO ] 2019-09-16T11:45:46,003Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Current network map for network 'Public Network' is up-to-date {}
+[INFO ] 2019-09-16T11:45:46,004Z [pool-2-thread-1] Signer.signNetworkMaps - End of network map signing {}
+[INFO ] 2019-09-16T11:46:00,975Z [pool-2-thread-1] Signer.signNetworkMaps - Started signing of the network map {}
+[INFO ] 2019-09-16T11:46:01,011Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Current network map for network 'Public Network' is up-to-date {}
+[INFO ] 2019-09-16T11:46:01,012Z [pool-2-thread-1] Signer.signNetworkMaps - End of network map signing {}
+[INFO ] 2019-09-16T11:46:15,977Z [pool-2-thread-1] Signer.signNetworkMaps - Started signing of the network map {}
+[INFO ] 2019-09-16T11:46:16,011Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Current network map for network 'Public Network' is up-to-date {}
+[INFO ] 2019-09-16T11:46:16,012Z [pool-2-thread-1] Signer.signNetworkMaps - End of network map signing {}
+[INFO ] 2019-09-16T11:46:30,976Z [pool-2-thread-1] Signer.signNetworkMaps - Started signing of the network map {}
+[INFO ] 2019-09-16T11:46:31,007Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Current network map for network 'Public Network' is up-to-date {}
+[INFO ] 2019-09-16T11:46:31,008Z [pool-2-thread-1] Signer.signNetworkMaps - End of network map signing {}
+[INFO ] 2019-09-16T11:46:45,977Z [pool-2-thread-1] Signer.signNetworkMaps - Started signing of the network map {}
+[INFO ] 2019-09-16T11:46:46,014Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Current network map for network 'Public Network' is up-to-date {}
+[INFO ] 2019-09-16T11:46:46,015Z [pool-2-thread-1] Signer.signNetworkMaps - End of network map signing {}
+[INFO ] 2019-09-16T11:47:00,977Z [pool-2-thread-1] Signer.signNetworkMaps - Started signing of the network map {}
+[INFO ] 2019-09-16T11:47:01,008Z [pool-2-thread-1] Signer.maybeSignNetworkMap - Current network map for network 'Public Network' is up-to-date {}
+[INFO ] 2019-09-16T11:47:01,009Z [pool-2-thread-1] Signer.signNetworkMaps - End of network map signing {}

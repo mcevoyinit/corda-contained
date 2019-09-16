@@ -1,0 +1,145 @@
+[INFO ] 2019-05-21T07:54:22,081Z [main] doorman.RunEZMCommand.executeCommand - Starting Network Services... {}
+[INFO ] 2019-05-21T07:54:22,180Z [main] common.utils.invoke - {
+    # ./persistent/doorman.conf: 1
+    "address" : "0.0.0.0:10000",
+    # ./persistent/doorman.conf: 3
+    "certificatesStoreFile" : "persistent/certificateStore.jks",
+    # ./persistent/doorman.conf: 4
+    "certificatesStorePassword" : "example-password",
+    # ./persistent/doorman.conf: 6
+    "dataSourceProperties" : {
+        # ./persistent/doorman.conf: 10
+        "dataSource.password" : "example-password",
+        # ./persistent/doorman.conf: 8
+        "dataSource.url" : "jdbc:h2:file:./persistent/doorman-persistence;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=10000;WRITE_DELAY=0;AUTO_SERVER_PORT=0",
+        # ./persistent/doorman.conf: 9
+        "dataSource.user" : "example-user",
+        # ./persistent/doorman.conf: 7
+        "dataSourceClassName" : "org.h2.jdbcx.JdbcDataSource"
+    },
+    # ./persistent/doorman.conf: 13
+    "database" : {
+        # ./persistent/doorman.conf: 14
+        "runMigration" : true
+    },
+    # ./persistent/doorman.conf: 17
+    "doorman" : {
+        # ./persistent/doorman.conf: 19
+        "approveAll" : true,
+        # ./persistent/doorman.conf: 31
+        "ezmListener" : {
+            # ./persistent/doorman.conf: 32
+            "port" : 10001
+        },
+        # ./persistent/doorman.conf: 21
+        "localSigner" : {
+            # ./persistent/doorman.conf: 27
+            "keyAlias" : "cordadoormanca",
+            # ./persistent/doorman.conf: 26
+            "keyPassword" : "example-password",
+            # ./persistent/doorman.conf: 22
+            "keyStore" : {
+                # ./persistent/doorman.conf: 23
+                "file" : "persistent/caKeyStore.jks",
+                # ./persistent/doorman.conf: 24
+                "password" : "example-password"
+            },
+            # ./persistent/doorman.conf: 28
+            "signInterval" : 15000
+        },
+        # ./persistent/doorman.conf: 18
+        "updateInterval" : 15000
+    }
+}
+ {}
+[INFO ] 2019-05-21T07:54:22,886Z [main] hikari.HikariDataSource.<init> - HikariPool-1 - Started. {}
+[INFO ] 2019-05-21T07:54:25,582Z [main] persistence.SchemaMigration.doRunMigration - defaultSchemaName=PUBLIC {}
+[INFO ] 2019-05-21T07:54:25,582Z [main] persistence.SchemaMigration.doRunMigration - liquibaseSchemaName=PUBLIC {}
+[INFO ] 2019-05-21T07:54:25,583Z [main] persistence.SchemaMigration.doRunMigration - outputDefaultSchema=true {}
+[INFO ] 2019-05-21T07:54:26,884Z [main] liquibase.info - Creating database history table with name: PUBLIC.DATABASECHANGELOG {}
+[INFO ] 2019-05-21T07:54:26,900Z [main] liquibase.info - Reading from PUBLIC.DATABASECHANGELOG {}
+[INFO ] 2019-05-21T07:54:26,971Z [main] liquibase.info - Successfully acquired change log lock {}
+[INFO ] 2019-05-21T07:54:26,983Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547025696854-1.1::R3.Corda: Sequence hibernate_sequence created {}
+[INFO ] 2019-05-21T07:54:26,984Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547025696854-1.1::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547025696854-1.1::R3.Corda ran successfully in 4ms {}
+[INFO ] 2019-05-21T07:54:26,999Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-2::R3.Corda: Table certificate_data created {}
+[INFO ] 2019-05-21T07:54:27,000Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-2::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547029522282-2::R3.Corda ran successfully in 4ms {}
+[INFO ] 2019-05-21T07:54:27,006Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-3::R3.Corda: Table certificate_revocation_list created {}
+[INFO ] 2019-05-21T07:54:27,007Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-3::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547029522282-3::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T07:54:27,014Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-4::R3.Corda: Table certificate_revocation_request created {}
+[INFO ] 2019-05-21T07:54:27,014Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-4::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547029522282-4::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T07:54:27,021Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-5::R3.Corda: Table certificate_revocation_request_AUD created {}
+[INFO ] 2019-05-21T07:54:27,021Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-5::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547029522282-5::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T07:54:27,028Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-6::R3.Corda: Table certificate_signing_request created {}
+[INFO ] 2019-05-21T07:54:27,028Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-6::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547029522282-6::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T07:54:27,034Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-7::R3.Corda: Table certificate_signing_request_AUD created {}
+[INFO ] 2019-05-21T07:54:27,035Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-7::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547029522282-7::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T07:54:27,041Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-8::R3.Corda: Table private_network_global created {}
+[INFO ] 2019-05-21T07:54:27,042Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-8::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547029522282-8::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T07:54:27,054Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-9::R3.Corda: Table REVINFO created {}
+[INFO ] 2019-05-21T07:54:27,055Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-9::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547029522282-9::R3.Corda ran successfully in 10ms {}
+[INFO ] 2019-05-21T07:54:27,060Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-10::R3.Corda: Primary key added to certificate_revocation_list (id) {}
+[INFO ] 2019-05-21T07:54:27,061Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-10::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547029522282-10::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T07:54:27,066Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-11::R3.Corda: Primary key added to certificate_data (id) {}
+[INFO ] 2019-05-21T07:54:27,067Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-11::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547029522282-11::R3.Corda ran successfully in 2ms {}
+[INFO ] 2019-05-21T07:54:27,073Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-12::R3.Corda: Primary key added to certificate_revocation_request (id) {}
+[INFO ] 2019-05-21T07:54:27,073Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-12::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547029522282-12::R3.Corda ran successfully in 2ms {}
+[INFO ] 2019-05-21T07:54:27,079Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-13::R3.Corda: Primary key added to certificate_signing_request_AUD (request_id, rev) {}
+[INFO ] 2019-05-21T07:54:27,080Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-13::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547029522282-13::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T07:54:27,086Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-14::R3.Corda: Primary key added to certificate_signing_request (request_id) {}
+[INFO ] 2019-05-21T07:54:27,086Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-14::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547029522282-14::R3.Corda ran successfully in 2ms {}
+[INFO ] 2019-05-21T07:54:27,094Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-15::R3.Corda: Primary key added to private_network_global (ID) {}
+[INFO ] 2019-05-21T07:54:27,094Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-15::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547029522282-15::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T07:54:27,102Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-16::R3.Corda: Unique constraint added to certificate_data(certificate_signing_request) {}
+[INFO ] 2019-05-21T07:54:27,103Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-16::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547029522282-16::R3.Corda ran successfully in 5ms {}
+[INFO ] 2019-05-21T07:54:27,124Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-17::R3.Corda: Unique constraint added to certificate_data(certificate_serial_number) {}
+[INFO ] 2019-05-21T07:54:27,126Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-17::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547029522282-17::R3.Corda ran successfully in 19ms {}
+[INFO ] 2019-05-21T07:54:27,137Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-18::R3.Corda: Unique constraint added to certificate_revocation_request(request_id) {}
+[INFO ] 2019-05-21T07:54:27,138Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-18::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547029522282-18::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T07:54:27,145Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-19::R3.Corda: Index IDX__CSR__PKH created {}
+[INFO ] 2019-05-21T07:54:27,145Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-19::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547029522282-19::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T07:54:27,156Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-20::R3.Corda: Foreign key constraint added to certificate_signing_request (private_network_id) {}
+[INFO ] 2019-05-21T07:54:27,156Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-20::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547029522282-20::R3.Corda ran successfully in 7ms {}
+[INFO ] 2019-05-21T07:54:27,161Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-21::R3.Corda: Foreign key constraint added to certificate_data (certificate_signing_request) {}
+[INFO ] 2019-05-21T07:54:27,162Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-21::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547029522282-21::R3.Corda ran successfully in 2ms {}
+[INFO ] 2019-05-21T07:54:27,168Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-22::R3.Corda: Foreign key constraint added to certificate_revocation_request (certificate_data_id) {}
+[INFO ] 2019-05-21T07:54:27,169Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547029522282-22::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547029522282-22::R3.Corda ran successfully in 4ms {}
+[INFO ] 2019-05-21T07:54:27,174Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1548244095320-23::R3.Corda: Unique constraint added to private_network_global(name) {}
+[INFO ] 2019-05-21T07:54:27,175Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1548244095320-23::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1548244095320-23::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T07:54:27,180Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547025696854-22::R3.Corda: Table migration created {}
+[INFO ] 2019-05-21T07:54:27,181Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547025696854-22::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547025696854-22::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T07:54:27,186Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547025696854-23::R3.Corda: Primary key added to migration (id) {}
+[INFO ] 2019-05-21T07:54:27,186Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547025696854-23::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547025696854-23::R3.Corda ran successfully in 2ms {}
+[INFO ] 2019-05-21T07:54:27,190Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547025696854-24::R3.Corda: New row inserted into migration {}
+[INFO ] 2019-05-21T07:54:27,191Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-init.xml::1547025696854-24::R3.Corda: ChangeSet migration/doorman.changelog-init.xml::1547025696854-24::R3.Corda ran successfully in 1ms {}
+[INFO ] 2019-05-21T07:54:27,220Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-rejection-reason.xml::1552407186000-1::R3.Corda: Columns rejection_reason(NVARCHAR(64)) added to certificate_signing_request {}
+[INFO ] 2019-05-21T07:54:27,222Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-rejection-reason.xml::1552407186000-1::R3.Corda: certificate_signing_request.remark datatype was changed to NVARCHAR(4000) {}
+[INFO ] 2019-05-21T07:54:27,224Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-rejection-reason.xml::1552407186000-1::R3.Corda: certificate_revocation_request.remark datatype was changed to NVARCHAR(4000) {}
+[INFO ] 2019-05-21T07:54:27,226Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-rejection-reason.xml::1552407186000-1::R3.Corda: certificate_revocation_request_AUD.remark datatype was changed to NVARCHAR(4000) {}
+[INFO ] 2019-05-21T07:54:27,227Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-rejection-reason.xml::1552407186000-1::R3.Corda: certificate_signing_request_AUD.remark datatype was changed to NVARCHAR(4000) {}
+[INFO ] 2019-05-21T07:54:27,228Z [main] liquibase.info - master.changelog.json: migration/doorman.changelog-rejection-reason.xml::1552407186000-1::R3.Corda: ChangeSet migration/doorman.changelog-rejection-reason.xml::1552407186000-1::R3.Corda ran successfully in 33ms {}
+[INFO ] 2019-05-21T07:54:27,234Z [main] liquibase.info - Successfully released change log lock {}
+[INFO ] 2019-05-21T07:54:27,363Z [main] persistence.HibernateConfiguration.<init> - Init HibernateConfiguration for schemas: [DoormanSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T07:54:27,369Z [main] persistence.HibernateConfiguration.makeSessionFactoryForSchemas - Creating session factory for schemas: [DoormanSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T07:54:27,529Z [main] hibernate.Version.logVersion - HHH000412: Hibernate Core {[WORKING]} {}
+[INFO ] 2019-05-21T07:54:27,532Z [main] cfg.Environment.<clinit> - HHH000206: hibernate.properties not found {}
+[INFO ] 2019-05-21T07:54:27,781Z [main] common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.0.4.Final} {}
+[INFO ] 2019-05-21T07:54:27,960Z [main] internal.ConnectionProviderInitiator.initiateService - HHH000130: Instantiating explicit connection provider: net.corda.nodeapi.internal.persistence.HibernateConfiguration$NodeDatabaseConnectionProvider {}
+[INFO ] 2019-05-21T07:54:28,005Z [main] dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect {}
+[INFO ] 2019-05-21T07:54:28,093Z [main] internal.EnversServiceImpl.configure - Envers integration enabled? : true {}
+[INFO ] 2019-05-21T07:54:28,097Z [main] type.BasicTypeRegistry.register - HHH000270: Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@40ce9049 {}
+[INFO ] 2019-05-21T07:54:30,680Z [main] persistence.HibernateConfiguration.makeSessionFactoryForSchemas - Created session factory for schemas: [DoormanSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T07:54:30,857Z [main] migration.MigrationManager.validate - Current migration status: DB Version: null, Expected Version: 0.3 {}
+[INFO ] 2019-05-21T07:54:30,884Z [main] doorman.NetworkManagementServer.getDoormanService - Starting Doorman web service with minimum platform version [-1] and newPKIOnly [false]. {}
+[INFO ] 2019-05-21T07:54:30,907Z [main] doorman.NetworkManagementServer.getDoormanService - Starting Doorman socket server on port 10001. {}
+[INFO ] 2019-05-21T07:54:30,907Z [main] Netty Server[10001].start - Starting listening service on port:10001 ssl:disabled {}
+[INFO ] 2019-05-21T07:54:31,151Z [main] Netty Server[10001].start - Server listening on port 10001 ssl:disabled {}
+[WARN ] 2019-05-21T07:54:31,152Z [main] doorman.NetworkManagementServer.getDoormanService - Certificate signing request service is running without any workflow plugin. {}
+[INFO ] 2019-05-21T07:54:31,302Z [main] common.utils.validated - Constructed signing certificate chain of length 3: [CN=Corda Doorman Certificate,OU=Corda,O=Example HoldCo LLC,L=New York,C=US]->[CN=Corda Subordinate Certificate,OU=Corda,O=Example HoldCo LLC,L=New York,C=US]->[CN=Corda Root Certificate,OU=Corda,O=Example HoldCo LLC,L=New York,C=US] {}
+[INFO ] 2019-05-21T07:54:31,369Z [main] util.log.initialized - Logging initialized @11477ms to org.eclipse.jetty.util.log.Slf4jLog {}
+[INFO ] 2019-05-21T07:54:31,421Z [pool-2-thread-1] internal.QueryTranslatorFactoryInitiator.initiateService - HHH000397: Using ASTQueryTranslatorFactory {}
+[INFO ] 2019-05-21T07:54:31,547Z [main] doorman.NetworkManagementWebServer.start - Starting network management web services... {}
+[INFO ] 2019-05-21T07:54:31,551Z [main] server.Server.doStart - jetty-9.4.z-SNAPSHOT {}
+[INFO ] 2019-05-21T07:54:32,390Z [main] handler.ContextHandler.doStart - Started o.e.j.s.ServletContextHandler@5e6bbe63{/,null,AVAILABLE} {}
+[INFO ] 2019-05-21T07:54:32,411Z [main] server.AbstractConnector.doStart - Started ServerConnector@7a4f0aa0{HTTP/1.1,[http/1.1]}{0.0.0.0:10000} {}
+[INFO ] 2019-05-21T07:54:32,412Z [main] server.Server.doStart - Started @12521ms {}
+[INFO ] 2019-05-21T07:54:32,412Z [main] ConsolePrint.start - Network management web services started on 0.0.0.0:10000 with [RegistrationWebService, MonitoringWebService] {}

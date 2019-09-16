@@ -1,0 +1,174 @@
+[INFO ] 2019-09-16T11:41:31,619Z [main] doorman.RunEZMCommand.executeCommand - Starting Network Services... {}
+[INFO ] 2019-09-16T11:41:31,696Z [main] common.utils.invoke - {
+    # ./persistent/network-map.conf: 1
+    "address" : "0.0.0.0:20000",
+    # ./persistent/network-map.conf: 3
+    "certificatesStoreFile" : "persistent/certificateStore.jks",
+    # ./persistent/network-map.conf: 4
+    "certificatesStorePassword" : "example-password",
+    # ./persistent/network-map.conf: 6
+    "dataSourceProperties" : {
+        # ./persistent/network-map.conf: 10
+        "dataSource.password" : "example-password",
+        # ./persistent/network-map.conf: 8
+        "dataSource.url" : "jdbc:h2:file:./persistent/network-map-persistence;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=10000;WRITE_DELAY=0;AUTO_SERVER_PORT=0",
+        # ./persistent/network-map.conf: 9
+        "dataSource.user" : "example-user",
+        # ./persistent/network-map.conf: 7
+        "dataSourceClassName" : "org.h2.jdbcx.JdbcDataSource"
+    },
+    # ./persistent/network-map.conf: 13
+    "database" : {
+        # ./persistent/network-map.conf: 14
+        "runMigration" : true
+    },
+    # ./persistent/network-map.conf: 17
+    "networkMap" : {
+        # ./persistent/network-map.conf: 18
+        "cacheTimeout" : 15000,
+        # ./persistent/network-map.conf: 33
+        "checkRevocation" : false,
+        # ./persistent/network-map.conf: 29
+        "ezmListener" : {
+            # ./persistent/network-map.conf: 30
+            "port" : 20001
+        },
+        # ./persistent/network-map.conf: 19
+        "localSigner" : {
+            # ./persistent/network-map.conf: 25
+            "keyAlias" : "cordanetworkmap",
+            # ./persistent/network-map.conf: 24
+            "keyPassword" : "example-password",
+            # ./persistent/network-map.conf: 20
+            "keyStore" : {
+                # ./persistent/network-map.conf: 21
+                "file" : "persistent/caKeyStore.jks",
+                # ./persistent/network-map.conf: 22
+                "password" : "example-password"
+            },
+            # ./persistent/network-map.conf: 26
+            "signInterval" : 15000
+        },
+        # ./persistent/network-map.conf: 34
+        "privateNetworkAutoEnrolment" : false
+    },
+    # ./persistent/network-map.conf: 38
+    # This section can be removed if the interactive shell is not required
+    "shell" : {
+        # ./persistent/network-map.conf: 41
+        "password" : "example-password",
+        # ./persistent/network-map.conf: 39
+        "sshdPort" : 20002,
+        # ./persistent/network-map.conf: 40
+        "user" : "testuser"
+    }
+}
+ {}
+[INFO ] 2019-09-16T11:41:32,261Z [main] hikari.HikariDataSource.<init> - HikariPool-1 - Started. {}
+[INFO ] 2019-09-16T11:41:36,062Z [main] persistence.SchemaMigration.doRunMigration - defaultSchemaName=PUBLIC {}
+[INFO ] 2019-09-16T11:41:36,063Z [main] persistence.SchemaMigration.doRunMigration - liquibaseSchemaName=PUBLIC {}
+[INFO ] 2019-09-16T11:41:36,065Z [main] persistence.SchemaMigration.doRunMigration - outputDefaultSchema=true {}
+[INFO ] 2019-09-16T11:41:38,402Z [main] liquibase.info - Reading from PUBLIC.DATABASECHANGELOG {}
+[INFO ] 2019-09-16T11:41:38,529Z [main] liquibase.info - Successfully acquired change log lock {}
+[INFO ] 2019-09-16T11:41:38,540Z [main] liquibase.info - Successfully released change log lock {}
+[INFO ] 2019-09-16T11:41:38,735Z [main] persistence.HibernateConfiguration.<init> - Init HibernateConfiguration for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-09-16T11:41:38,740Z [main] persistence.HibernateConfiguration.makeSessionFactoryForSchemas - Creating session factory for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-09-16T11:41:38,844Z [main] hibernate.Version.logVersion - HHH000412: Hibernate Core {[WORKING]} {}
+[INFO ] 2019-09-16T11:41:38,847Z [main] cfg.Environment.<clinit> - HHH000206: hibernate.properties not found {}
+[INFO ] 2019-09-16T11:41:39,032Z [main] common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.0.4.Final} {}
+[INFO ] 2019-09-16T11:41:39,175Z [main] internal.ConnectionProviderInitiator.initiateService - HHH000130: Instantiating explicit connection provider: net.corda.nodeapi.internal.persistence.HibernateConfiguration$NodeDatabaseConnectionProvider {}
+[INFO ] 2019-09-16T11:41:39,207Z [main] dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect {}
+[INFO ] 2019-09-16T11:41:39,274Z [main] internal.EnversServiceImpl.configure - Envers integration enabled? : true {}
+[INFO ] 2019-09-16T11:41:39,280Z [main] type.BasicTypeRegistry.register - HHH000270: Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@684e8c9d {}
+[WARN ] 2019-09-16T11:41:39,740Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[WARN ] 2019-09-16T11:41:39,753Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[WARN ] 2019-09-16T11:41:39,756Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[INFO ] 2019-09-16T11:41:43,455Z [main] persistence.HibernateConfiguration.makeSessionFactoryForSchemas - Created session factory for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-09-16T11:41:43,678Z [main] migration.MigrationManager.validate - Current migration status: DB Version: 0.3, Expected Version: 0.3 {}
+[INFO ] 2019-09-16T11:41:43,744Z [main] internal.QueryTranslatorFactoryInitiator.initiateService - HHH000397: Using ASTQueryTranslatorFactory {}
+[INFO ] 2019-09-16T11:41:45,231Z [main] doorman.NetworkManagementServer.getNetworkMapService - Starting Network Map web service with minimum platform version
+[-1],
+newPKIOnly [false]
+network parameters: NetworkParameters {
+      minimumPlatformVersion=3
+      notaries=[NotaryInfo(identity=O=Notary, L=London, C=GB, validating=false)]
+      maxMessageSize=10485760
+      maxTransactionSize=10485760
+      whitelistedContractImplementations {
+        
+      }
+      eventHorizon=PT720H
+      packageOwnership {
+        
+      }
+      modifiedTime=2019-05-21T09:55:15.577Z
+      epoch=1
+  },
+and the EZM listening service on port: 20001 {}
+[INFO ] 2019-09-16T11:41:45,249Z [main] Netty Server[20001].start - Starting listening service on port:20001 ssl:disabled {}
+[INFO ] 2019-09-16T11:41:45,665Z [main] Netty Server[20001].start - Server listening on port 20001 ssl:disabled {}
+[INFO ] 2019-09-16T11:41:45,886Z [main] common.utils.validated - Constructed signing certificate chain of length 3: [CN=Corda Network Map Certificate,OU=Corda,O=Example HoldCo LLC,L=New York,C=US]->[CN=Corda Subordinate Certificate,OU=Corda,O=Example HoldCo LLC,L=New York,C=US]->[CN=Corda Root Certificate,OU=Corda,O=Example HoldCo LLC,L=New York,C=US] {}
+[INFO ] 2019-09-16T11:41:45,936Z [main] doorman.NetworkManagementServer.getNetworkMapService - starting shell {}
+[INFO ] 2019-09-16T11:41:46,181Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}
+[INFO ] 2019-09-16T11:41:46,962Z [main] eddsa.EdDSASecurityProviderRegistrar.getOrCreateProvider - getOrCreateProvider(EdDSA) created instance of net.i2p.crypto.eddsa.EdDSASecurityProvider {}
+[INFO ] 2019-09-16T11:41:48,434Z [main] ConsolePrint.getNetworkMapService - Binding Shell SSHD server on port 20002 {}
+[INFO ] 2019-09-16T11:41:48,442Z [main] impl.PersistentNodeInfoStorage.getNodeInfosFromStaging - Retrieving all node infos from staging table. {}
+[INFO ] 2019-09-16T11:41:48,539Z [main] util.log.initialized - Logging initialized @18636ms to org.eclipse.jetty.util.log.Slf4jLog {}
+[INFO ] 2019-09-16T11:41:48,738Z [main] doorman.NetworkManagementWebServer.start - Starting network management web services... {}
+[INFO ] 2019-09-16T11:41:48,746Z [main] server.Server.doStart - jetty-9.4.z-SNAPSHOT {}
+[INFO ] 2019-09-16T11:41:49,924Z [main] handler.ContextHandler.doStart - Started o.e.j.s.ServletContextHandler@4d4337f9{/,null,AVAILABLE} {}
+[INFO ] 2019-09-16T11:41:49,941Z [main] server.AbstractConnector.doStart - Started ServerConnector@5ae22651{HTTP/1.1,[http/1.1]}{0.0.0.0:20000} {}
+[INFO ] 2019-09-16T11:41:49,942Z [main] server.Server.doStart - Started @20040ms {}
+[INFO ] 2019-09-16T11:41:49,945Z [main] ConsolePrint.start - Network management web services started on 0.0.0.0:20000 with [NetworkMapWebService, MonitoringWebService] {}
+[INFO ] 2019-09-16T11:41:53,468Z [qtp1458383791-28] webservice.NetworkMapWebService.load - Re-loading network map cache {}
+[INFO ] 2019-09-16T11:41:57,203Z [qtp1458383791-25] webservice.NetworkMapWebService.registerNode - Processing network map request for node publish {}
+[INFO ] 2019-09-16T11:41:57,390Z [qtp1458383791-25] impl.PersistentNodeInfoStorage.putNodeInfo - Saving signed node info: NodeInfo(addresses=[enm-notary-service:30000], legalIdentitiesAndCerts=[O=Notary, L=London, C=GB], platformVersion=4, serial=1558432394374) {}
+[INFO ] 2019-09-16T11:41:57,418Z [qtp1458383791-25] impl.PersistentNodeInfoStorage.putNodeInfo - Done saving node info: NodeInfo(addresses=[enm-notary-service:30000], legalIdentitiesAndCerts=[O=Notary, L=London, C=GB], platformVersion=4, serial=1558432394374) with hash: 11077F6EC090D56C3DB8A5F54F49E29EA0A9B5EAA51BE2471221891B2DC5C287 {}
+[INFO ] 2019-09-16T11:42:00,991Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}
+[INFO ] 2019-09-16T11:42:03,264Z [qtp1458383791-31] webservice.NetworkMapWebService.registerNode - Processing network map request for node publish {}
+[INFO ] 2019-09-16T11:42:03,324Z [qtp1458383791-31] impl.PersistentNodeInfoStorage.putNodeInfo - Saving signed node info: NodeInfo(addresses=[corda-partya-service:40000], legalIdentitiesAndCerts=[O=PartyA, L=London, C=GB], platformVersion=4, serial=1558432398147) {}
+[INFO ] 2019-09-16T11:42:03,333Z [qtp1458383791-31] impl.PersistentNodeInfoStorage.putNodeInfo - Done saving node info: NodeInfo(addresses=[corda-partya-service:40000], legalIdentitiesAndCerts=[O=PartyA, L=London, C=GB], platformVersion=4, serial=1558432398147) with hash: 08918B23B16D86EF01A5BD1E04343CD1F71899A3D7A11A5DAA692131E96FB4EE {}
+[INFO ] 2019-09-16T11:42:10,224Z [qtp1458383791-30] webservice.NetworkMapWebService.registerNode - Processing network map request for node publish {}
+[INFO ] 2019-09-16T11:42:10,245Z [qtp1458383791-30] webservice.NetworkMapWebService.load - Re-loading network map cache {}
+[INFO ] 2019-09-16T11:42:10,346Z [qtp1458383791-30] impl.PersistentNodeInfoStorage.putNodeInfo - Saving signed node info: NodeInfo(addresses=[corda-partyb-service:40001], legalIdentitiesAndCerts=[O=PartyB, L=London, C=GB], platformVersion=4, serial=1558432398895) {}
+[INFO ] 2019-09-16T11:42:10,357Z [qtp1458383791-30] impl.PersistentNodeInfoStorage.putNodeInfo - Done saving node info: NodeInfo(addresses=[corda-partyb-service:40001], legalIdentitiesAndCerts=[O=PartyB, L=London, C=GB], platformVersion=4, serial=1558432398895) with hash: 61B032A1B6ADFB3F83182BDF0515855011F8BD3819B31C16F1C2C638044D75EC {}
+[INFO ] 2019-09-16T11:42:15,952Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}
+[INFO ] 2019-09-16T11:42:16,081Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.saveNewNetworkMap - Saving new network map to database... {}
+[INFO ] 2019-09-16T11:42:25,404Z [qtp1458383791-30] webservice.NetworkMapWebService.load - Re-loading network map cache {}
+[INFO ] 2019-09-16T11:42:30,955Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}
+[INFO ] 2019-09-16T11:42:40,429Z [qtp1458383791-27] webservice.NetworkMapWebService.load - Re-loading network map cache {}
+[INFO ] 2019-09-16T11:42:45,957Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}
+[INFO ] 2019-09-16T11:42:55,459Z [qtp1458383791-27] webservice.NetworkMapWebService.load - Re-loading network map cache {}
+[INFO ] 2019-09-16T11:43:00,955Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}
+[INFO ] 2019-09-16T11:43:10,492Z [qtp1458383791-28] webservice.NetworkMapWebService.load - Re-loading network map cache {}
+[INFO ] 2019-09-16T11:43:15,975Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}
+[INFO ] 2019-09-16T11:43:25,542Z [qtp1458383791-29] webservice.NetworkMapWebService.load - Re-loading network map cache {}
+[INFO ] 2019-09-16T11:43:30,988Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}
+[INFO ] 2019-09-16T11:43:40,576Z [qtp1458383791-29] webservice.NetworkMapWebService.load - Re-loading network map cache {}
+[INFO ] 2019-09-16T11:43:45,982Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}
+[INFO ] 2019-09-16T11:43:55,609Z [qtp1458383791-31] webservice.NetworkMapWebService.load - Re-loading network map cache {}
+[INFO ] 2019-09-16T11:44:00,982Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}
+[INFO ] 2019-09-16T11:44:10,634Z [qtp1458383791-31] webservice.NetworkMapWebService.load - Re-loading network map cache {}
+[INFO ] 2019-09-16T11:44:15,985Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}
+[INFO ] 2019-09-16T11:44:25,658Z [qtp1458383791-30] webservice.NetworkMapWebService.load - Re-loading network map cache {}
+[INFO ] 2019-09-16T11:44:30,985Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}
+[INFO ] 2019-09-16T11:44:40,685Z [qtp1458383791-27] webservice.NetworkMapWebService.load - Re-loading network map cache {}
+[INFO ] 2019-09-16T11:44:45,989Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}
+[INFO ] 2019-09-16T11:44:55,715Z [qtp1458383791-25] webservice.NetworkMapWebService.load - Re-loading network map cache {}
+[INFO ] 2019-09-16T11:45:00,982Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}
+[INFO ] 2019-09-16T11:45:10,741Z [qtp1458383791-25] webservice.NetworkMapWebService.load - Re-loading network map cache {}
+[INFO ] 2019-09-16T11:45:15,987Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}
+[INFO ] 2019-09-16T11:45:25,772Z [qtp1458383791-28] webservice.NetworkMapWebService.load - Re-loading network map cache {}
+[INFO ] 2019-09-16T11:45:30,986Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}
+[INFO ] 2019-09-16T11:45:40,807Z [qtp1458383791-32] webservice.NetworkMapWebService.load - Re-loading network map cache {}
+[INFO ] 2019-09-16T11:45:45,982Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}
+[INFO ] 2019-09-16T11:45:55,834Z [qtp1458383791-30] webservice.NetworkMapWebService.load - Re-loading network map cache {}
+[INFO ] 2019-09-16T11:46:00,981Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}
+[INFO ] 2019-09-16T11:46:10,856Z [qtp1458383791-30] webservice.NetworkMapWebService.load - Re-loading network map cache {}
+[INFO ] 2019-09-16T11:46:15,987Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}
+[INFO ] 2019-09-16T11:46:25,875Z [qtp1458383791-29] webservice.NetworkMapWebService.load - Re-loading network map cache {}
+[INFO ] 2019-09-16T11:46:30,983Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}
+[INFO ] 2019-09-16T11:46:40,898Z [qtp1458383791-28] webservice.NetworkMapWebService.load - Re-loading network map cache {}
+[INFO ] 2019-09-16T11:46:45,991Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}
+[INFO ] 2019-09-16T11:46:55,919Z [qtp1458383791-29] webservice.NetworkMapWebService.load - Re-loading network map cache {}
+[INFO ] 2019-09-16T11:47:00,985Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}

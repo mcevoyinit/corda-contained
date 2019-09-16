@@ -30,6 +30,14 @@ List all images and run the image you have just created
 
           docker images 
           docker run corda_party
+          
+Once the container is running you can enter the process via
+
+         docker exec -it <container-id> /bin/bash
+         
+From there we can SSH into the running nodes shell
+
+        ssh -p 2222 user1@localhost with password test
      
 At this point we have successfully build and ran a Corda node inside a Docker container!  
 

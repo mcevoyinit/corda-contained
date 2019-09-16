@@ -1,0 +1,57 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: enm-doorman-pv-claim
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  selector: 
+    matchLabels:
+      purpose: doorman    
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: enm-doorman-service
+spec:
+  selector:
+    app: enm-doorman
+  ports:
+  - name: default
+    protocol: TCP
+    port: 10000
+    targetPort: 10000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: enm-doorman-deployment
+  labels:
+    app: enm-doorman
+spec:
+  replicas: 1   
+  selector:
+    matchLabels:
+      app: enm-doorman
+  template:
+    metadata:
+      labels:
+        app: enm-doorman
+    spec:
+      volumes:
+      - name: enm-doorman-pv-storage
+        persistentVolumeClaim:
+          claimName: enm-doorman-pv-claim      
+      containers:
+      - name: enm-doorman
+        image: enm_doorman:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 10000        
+        volumeMounts:
+          - mountPath: "/opt/corda/doorman/persistent"
+            name: enm-doorman-pv-storage         

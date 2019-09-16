@@ -1,0 +1,15 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: corda-partyb-pv-volume
+  labels:
+    type: local
+    purpose: partyb
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/Users/ericmcevoy/DockerK8sCorda/resources/volumes/parties/partyB"

@@ -1,0 +1,1108 @@
+[INFO ] 2019-05-21T09:55:09,072Z [main] doorman.RunEZMCommand.executeCommand - Starting Network Services... {}
+[INFO ] 2019-05-21T09:55:09,122Z [main] common.utils.invoke - {
+    # ./persistent/network-map.conf: 1
+    "address" : "0.0.0.0:20000",
+    # ./persistent/network-map.conf: 3
+    "certificatesStoreFile" : "certificates/certificateStore.jks",
+    # ./persistent/network-map.conf: 4
+    "certificatesStorePassword" : "example-password",
+    # ./persistent/network-map.conf: 6
+    "dataSourceProperties" : {
+        # ./persistent/network-map.conf: 10
+        "dataSource.password" : "example-password",
+        # ./persistent/network-map.conf: 8
+        "dataSource.url" : "jdbc:h2:file:./persistent/network-map-persistence;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=10000;WRITE_DELAY=0;AUTO_SERVER_PORT=0",
+        # ./persistent/network-map.conf: 9
+        "dataSource.user" : "example-user",
+        # ./persistent/network-map.conf: 7
+        "dataSourceClassName" : "org.h2.jdbcx.JdbcDataSource"
+    },
+    # ./persistent/network-map.conf: 13
+    "database" : {
+        # ./persistent/network-map.conf: 14
+        "runMigration" : true
+    },
+    # ./persistent/network-map.conf: 17
+    "networkMap" : {
+        # ./persistent/network-map.conf: 18
+        "cacheTimeout" : 15000,
+        # ./persistent/network-map.conf: 33
+        "checkRevocation" : false,
+        # ./persistent/network-map.conf: 29
+        "ezmListener" : {
+            # ./persistent/network-map.conf: 30
+            "port" : 20001
+        },
+        # ./persistent/network-map.conf: 19
+        "localSigner" : {
+            # ./persistent/network-map.conf: 25
+            "keyAlias" : "cordanetworkmap",
+            # ./persistent/network-map.conf: 24
+            "keyPassword" : "example-password",
+            # ./persistent/network-map.conf: 20
+            "keyStore" : {
+                # ./persistent/network-map.conf: 21
+                "file" : "certificates/caKeyStore.jks",
+                # ./persistent/network-map.conf: 22
+                "password" : "example-password"
+            },
+            # ./persistent/network-map.conf: 26
+            "signInterval" : 15000
+        },
+        # ./persistent/network-map.conf: 34
+        "privateNetworkAutoEnrolment" : false
+    },
+    # ./persistent/network-map.conf: 38
+    # This section can be removed if the interactive shell is not required
+    "shell" : {
+        # ./persistent/network-map.conf: 41
+        "password" : "example-password",
+        # ./persistent/network-map.conf: 39
+        "sshdPort" : 20002,
+        # ./persistent/network-map.conf: 40
+        "user" : "testuser"
+    }
+}
+ {}
+[INFO ] 2019-05-21T09:55:09,516Z [main] hikari.HikariDataSource.<init> - HikariPool-1 - Started. {}
+[INFO ] 2019-05-21T09:55:12,002Z [main] persistence.SchemaMigration.doRunMigration - defaultSchemaName=PUBLIC {}
+[INFO ] 2019-05-21T09:55:12,003Z [main] persistence.SchemaMigration.doRunMigration - liquibaseSchemaName=PUBLIC {}
+[INFO ] 2019-05-21T09:55:12,004Z [main] persistence.SchemaMigration.doRunMigration - outputDefaultSchema=true {}
+[INFO ] 2019-05-21T09:55:12,935Z [main] liquibase.info - Creating database history table with name: PUBLIC.DATABASECHANGELOG {}
+[INFO ] 2019-05-21T09:55:12,943Z [main] liquibase.info - Reading from PUBLIC.DATABASECHANGELOG {}
+[INFO ] 2019-05-21T09:55:12,988Z [main] liquibase.info - Successfully acquired change log lock {}
+[INFO ] 2019-05-21T09:55:12,996Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-1.1::R3.Corda: Sequence hibernate_sequence created {}
+[INFO ] 2019-05-21T09:55:12,997Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-1.1::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-1.1::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T09:55:13,006Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-2::R3.Corda: Table certificate_chain created {}
+[INFO ] 2019-05-21T09:55:13,007Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-2::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-2::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T09:55:13,013Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-3::R3.Corda: Table network_map created {}
+[INFO ] 2019-05-21T09:55:13,014Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-3::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-3::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T09:55:13,020Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-4::R3.Corda: Table network_map_AUD created {}
+[INFO ] 2019-05-21T09:55:13,021Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-4::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-4::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T09:55:13,027Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-5::R3.Corda: Table network_parameters created {}
+[INFO ] 2019-05-21T09:55:13,028Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-5::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-5::R3.Corda ran successfully in 2ms {}
+[INFO ] 2019-05-21T09:55:13,034Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-6::R3.Corda: Table network_parameters_update created {}
+[INFO ] 2019-05-21T09:55:13,034Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-6::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-6::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T09:55:13,040Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-7::R3.Corda: Table node_info created {}
+[INFO ] 2019-05-21T09:55:13,041Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-7::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-7::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T09:55:13,047Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-8::R3.Corda: Table private_network created {}
+[INFO ] 2019-05-21T09:55:13,048Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-8::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-8::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T09:55:13,059Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-9::R3.Corda: Table REVINFO created {}
+[INFO ] 2019-05-21T09:55:13,059Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-9::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-9::R3.Corda ran successfully in 7ms {}
+[INFO ] 2019-05-21T09:55:13,066Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-10::R3.Corda: Primary key added to network_parameters (hash) {}
+[INFO ] 2019-05-21T09:55:13,066Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-10::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-10::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T09:55:13,072Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-11::R3.Corda: Primary key added to network_map_AUD (id, rev) {}
+[INFO ] 2019-05-21T09:55:13,073Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-11::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-11::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T09:55:13,079Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-12::R3.Corda: Primary key added to network_map (id) {}
+[INFO ] 2019-05-21T09:55:13,079Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-12::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-12::R3.Corda ran successfully in 2ms {}
+[INFO ] 2019-05-21T09:55:13,085Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-13::R3.Corda: Primary key added to node_info (node_info_hash) {}
+[INFO ] 2019-05-21T09:55:13,086Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-13::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-13::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T09:55:13,090Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-14::R3.Corda: Primary key added to network_parameters_update (id) {}
+[INFO ] 2019-05-21T09:55:13,091Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-14::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-14::R3.Corda ran successfully in 2ms {}
+[INFO ] 2019-05-21T09:55:13,096Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-15::R3.Corda: Primary key added to certificate_chain (hash) {}
+[INFO ] 2019-05-21T09:55:13,097Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-15::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-15::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T09:55:13,102Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-16::R3.Corda: Primary key added to private_network (id) {}
+[INFO ] 2019-05-21T09:55:13,103Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-16::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-16::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T09:55:13,110Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-17::R3.Corda: Index IDX__NM__NPH created {}
+[INFO ] 2019-05-21T09:55:13,110Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-17::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-17::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T09:55:13,116Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-18::R3.Corda: Index IDX__NI__PNI created {}
+[INFO ] 2019-05-21T09:55:13,117Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-18::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-18::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T09:55:13,123Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-19::R3.Corda: Index IDX__NI__PKH created {}
+[INFO ] 2019-05-21T09:55:13,123Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-19::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-19::R3.Corda ran successfully in 2ms {}
+[INFO ] 2019-05-21T09:55:13,156Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-20::R3.Corda: Foreign key constraint added to node_info (private_network_id) {}
+[INFO ] 2019-05-21T09:55:13,157Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-20::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-20::R3.Corda ran successfully in 12ms {}
+[INFO ] 2019-05-21T09:55:13,164Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-21::R3.Corda: Foreign key constraint added to network_map (network_parameters_hash) {}
+[INFO ] 2019-05-21T09:55:13,164Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-21::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-21::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T09:55:13,171Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1548244095320-22::R3.Corda: Unique constraint added to private_network(name) {}
+[INFO ] 2019-05-21T09:55:13,172Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1548244095320-22::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1548244095320-22::R3.Corda ran successfully in 4ms {}
+[INFO ] 2019-05-21T09:55:13,179Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1548688404451-23::R3.Corda: Table node_info_staging created {}
+[INFO ] 2019-05-21T09:55:13,179Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1548688404451-23::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1548688404451-23::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T09:55:13,186Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-22::R3.Corda: Table migration created {}
+[INFO ] 2019-05-21T09:55:13,186Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-22::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-22::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T09:55:13,192Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-23::R3.Corda: Primary key added to migration (id) {}
+[INFO ] 2019-05-21T09:55:13,193Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-23::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-23::R3.Corda ran successfully in 3ms {}
+[INFO ] 2019-05-21T09:55:13,197Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-24::R3.Corda: New row inserted into migration {}
+[INFO ] 2019-05-21T09:55:13,198Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-24::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-24::R3.Corda ran successfully in 1ms {}
+[INFO ] 2019-05-21T09:55:13,204Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-25::R3.Corda: Table node_info_quarantine created {}
+[INFO ] 2019-05-21T09:55:13,204Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-25::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-25::R3.Corda ran successfully in 2ms {}
+[INFO ] 2019-05-21T09:55:13,209Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-26::R3.Corda: Primary key added to node_info_staging (node_info_hash) {}
+[INFO ] 2019-05-21T09:55:13,210Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-26::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-26::R3.Corda ran successfully in 2ms {}
+[INFO ] 2019-05-21T09:55:13,215Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-27::R3.Corda: Primary key added to node_info_quarantine (node_info_hash) {}
+[INFO ] 2019-05-21T09:55:13,216Z [main] liquibase.info - master.changelog.json: migration/network-map.changelog-init.xml::1547025696854-27::R3.Corda: ChangeSet migration/network-map.changelog-init.xml::1547025696854-27::R3.Corda ran successfully in 2ms {}
+[INFO ] 2019-05-21T09:55:13,220Z [main] liquibase.info - Successfully released change log lock {}
+[INFO ] 2019-05-21T09:55:13,269Z [main] persistence.HibernateConfiguration.<init> - Init HibernateConfiguration for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T09:55:13,273Z [main] persistence.HibernateConfiguration.makeSessionFactoryForSchemas - Creating session factory for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T09:55:13,337Z [main] hibernate.Version.logVersion - HHH000412: Hibernate Core {[WORKING]} {}
+[INFO ] 2019-05-21T09:55:13,338Z [main] cfg.Environment.<clinit> - HHH000206: hibernate.properties not found {}
+[INFO ] 2019-05-21T09:55:13,424Z [main] common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.0.4.Final} {}
+[INFO ] 2019-05-21T09:55:13,487Z [main] internal.ConnectionProviderInitiator.initiateService - HHH000130: Instantiating explicit connection provider: net.corda.nodeapi.internal.persistence.HibernateConfiguration$NodeDatabaseConnectionProvider {}
+[INFO ] 2019-05-21T09:55:13,501Z [main] dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect {}
+[INFO ] 2019-05-21T09:55:13,534Z [main] internal.EnversServiceImpl.configure - Envers integration enabled? : true {}
+[INFO ] 2019-05-21T09:55:13,536Z [main] type.BasicTypeRegistry.register - HHH000270: Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@3d615b2e {}
+[WARN ] 2019-05-21T09:55:13,645Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[WARN ] 2019-05-21T09:55:13,649Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[WARN ] 2019-05-21T09:55:13,650Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[INFO ] 2019-05-21T09:55:14,946Z [main] persistence.HibernateConfiguration.makeSessionFactoryForSchemas - Created session factory for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T09:55:15,020Z [main] migration.MigrationManager.validate - Current migration status: DB Version: null, Expected Version: 0.3 {}
+[INFO ] 2019-05-21T09:55:15,054Z [main] common.utils.loadParametersFromFile - Upgrading configuration to new format {}
+[INFO ] 2019-05-21T09:55:15,065Z [main] common.utils.loadParametersFromFile - {
+    # ./persistent/network-parameters.conf: 14
+    "eventHorizonDays" : 30,
+    # ./persistent/network-parameters.conf: 12
+    "maxMessageSize" : 10485760,
+    # ./persistent/network-parameters.conf: 13
+    "maxTransactionSize" : 10485760,
+    # ./persistent/network-parameters.conf: 11
+    "minimumPlatformVersion" : 3,
+    # ./persistent/network-parameters.conf: 1
+    "notaries" : [
+        # ./persistent/network-parameters.conf: 4
+        {
+            # ./persistent/network-parameters.conf: 5
+            "notaryNodeInfoFile" : "nodeInfo-777DA369F066FE34BEDE3E6334A1006A4026A02DD76AFA798204BD015C9965DE",
+            # ./persistent/network-parameters.conf: 6
+            "validating" : false
+        }
+    ]
+}
+ {}
+[INFO ] 2019-05-21T09:55:15,503Z [main] doorman.ParametersUpdateHandler.handleSetNetworkParameters - maxMessageSize is not currently wired in the nodes {}
+[INFO ] 2019-05-21T09:55:15,515Z [main] internal.QueryTranslatorFactoryInitiator.initiateService - HHH000397: Using ASTQueryTranslatorFactory {}
+[INFO ] 2019-05-21T09:55:15,581Z [main] doorman.ParametersUpdateHandler.handleSetNetworkParameters - Saving initial network parameters to be signed:
+NetworkParameters {
+      minimumPlatformVersion=3
+      notaries=[NotaryInfo(identity=O=Notary, L=London, C=GB, validating=false)]
+      maxMessageSize=10485760
+      maxTransactionSize=10485760
+      whitelistedContractImplementations {
+        
+      }
+      eventHorizon=PT720H
+      packageOwnership {
+        
+      }
+      modifiedTime=2019-05-21T09:55:15.577Z
+      epoch=1
+  } {}
+[INFO ] 2019-05-21T09:55:15,582Z [main] impl.PersistentNetworkMapStorage.saveNetworkParameters - Saving network parameters: NetworkParameters {
+      minimumPlatformVersion=3
+      notaries=[NotaryInfo(identity=O=Notary, L=London, C=GB, validating=false)]
+      maxMessageSize=10485760
+      maxTransactionSize=10485760
+      whitelistedContractImplementations {
+        
+      }
+      eventHorizon=PT720H
+      packageOwnership {
+        
+      }
+      modifiedTime=2019-05-21T09:55:15.577Z
+      epoch=1
+  } {}
+[INFO ] 2019-05-21T09:55:15,721Z [main] ConsolePrint.handleSetNetworkParameters - Saved initial network parameters to be signed:
+NetworkParameters {
+      minimumPlatformVersion=3
+      notaries=[NotaryInfo(identity=O=Notary, L=London, C=GB, validating=false)]
+      maxMessageSize=10485760
+      maxTransactionSize=10485760
+      whitelistedContractImplementations {
+        
+      }
+      eventHorizon=PT720H
+      packageOwnership {
+        
+      }
+      modifiedTime=2019-05-21T09:55:15.577Z
+      epoch=1
+  } {}
+[INFO ] 2019-05-21T09:55:15,722Z [main] pool.HikariPool.shutdown - HikariPool-1 - Close initiated... {}
+[INFO ] 2019-05-21T09:55:15,726Z [main] pool.HikariPool.shutdown - HikariPool-1 - Closed. {}
+[INFO ] 2019-05-21T09:55:16,645Z [main] doorman.RunEZMCommand.executeCommand - Starting Network Services... {}
+[INFO ] 2019-05-21T09:55:16,683Z [main] common.utils.invoke - {
+    # ./persistent/network-map.conf: 1
+    "address" : "0.0.0.0:20000",
+    # ./persistent/network-map.conf: 3
+    "certificatesStoreFile" : "certificates/certificateStore.jks",
+    # ./persistent/network-map.conf: 4
+    "certificatesStorePassword" : "example-password",
+    # ./persistent/network-map.conf: 6
+    "dataSourceProperties" : {
+        # ./persistent/network-map.conf: 10
+        "dataSource.password" : "example-password",
+        # ./persistent/network-map.conf: 8
+        "dataSource.url" : "jdbc:h2:file:./persistent/network-map-persistence;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=10000;WRITE_DELAY=0;AUTO_SERVER_PORT=0",
+        # ./persistent/network-map.conf: 9
+        "dataSource.user" : "example-user",
+        # ./persistent/network-map.conf: 7
+        "dataSourceClassName" : "org.h2.jdbcx.JdbcDataSource"
+    },
+    # ./persistent/network-map.conf: 13
+    "database" : {
+        # ./persistent/network-map.conf: 14
+        "runMigration" : true
+    },
+    # ./persistent/network-map.conf: 17
+    "networkMap" : {
+        # ./persistent/network-map.conf: 18
+        "cacheTimeout" : 15000,
+        # ./persistent/network-map.conf: 33
+        "checkRevocation" : false,
+        # ./persistent/network-map.conf: 29
+        "ezmListener" : {
+            # ./persistent/network-map.conf: 30
+            "port" : 20001
+        },
+        # ./persistent/network-map.conf: 19
+        "localSigner" : {
+            # ./persistent/network-map.conf: 25
+            "keyAlias" : "cordanetworkmap",
+            # ./persistent/network-map.conf: 24
+            "keyPassword" : "example-password",
+            # ./persistent/network-map.conf: 20
+            "keyStore" : {
+                # ./persistent/network-map.conf: 21
+                "file" : "certificates/caKeyStore.jks",
+                # ./persistent/network-map.conf: 22
+                "password" : "example-password"
+            },
+            # ./persistent/network-map.conf: 26
+            "signInterval" : 15000
+        },
+        # ./persistent/network-map.conf: 34
+        "privateNetworkAutoEnrolment" : false
+    },
+    # ./persistent/network-map.conf: 38
+    # This section can be removed if the interactive shell is not required
+    "shell" : {
+        # ./persistent/network-map.conf: 41
+        "password" : "example-password",
+        # ./persistent/network-map.conf: 39
+        "sshdPort" : 20002,
+        # ./persistent/network-map.conf: 40
+        "user" : "testuser"
+    }
+}
+ {}
+[INFO ] 2019-05-21T09:55:16,999Z [main] hikari.HikariDataSource.<init> - HikariPool-1 - Started. {}
+[INFO ] 2019-05-21T09:55:19,321Z [main] persistence.SchemaMigration.doRunMigration - defaultSchemaName=PUBLIC {}
+[INFO ] 2019-05-21T09:55:19,322Z [main] persistence.SchemaMigration.doRunMigration - liquibaseSchemaName=PUBLIC {}
+[INFO ] 2019-05-21T09:55:19,322Z [main] persistence.SchemaMigration.doRunMigration - outputDefaultSchema=true {}
+[INFO ] 2019-05-21T09:55:20,176Z [main] liquibase.info - Reading from PUBLIC.DATABASECHANGELOG {}
+[INFO ] 2019-05-21T09:55:20,207Z [main] liquibase.info - Successfully acquired change log lock {}
+[INFO ] 2019-05-21T09:55:20,210Z [main] liquibase.info - Successfully released change log lock {}
+[INFO ] 2019-05-21T09:55:20,254Z [main] persistence.HibernateConfiguration.<init> - Init HibernateConfiguration for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T09:55:20,257Z [main] persistence.HibernateConfiguration.makeSessionFactoryForSchemas - Creating session factory for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T09:55:20,319Z [main] hibernate.Version.logVersion - HHH000412: Hibernate Core {[WORKING]} {}
+[INFO ] 2019-05-21T09:55:20,320Z [main] cfg.Environment.<clinit> - HHH000206: hibernate.properties not found {}
+[INFO ] 2019-05-21T09:55:20,404Z [main] common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.0.4.Final} {}
+[INFO ] 2019-05-21T09:55:20,477Z [main] internal.ConnectionProviderInitiator.initiateService - HHH000130: Instantiating explicit connection provider: net.corda.nodeapi.internal.persistence.HibernateConfiguration$NodeDatabaseConnectionProvider {}
+[INFO ] 2019-05-21T09:55:20,491Z [main] dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect {}
+[INFO ] 2019-05-21T09:55:20,524Z [main] internal.EnversServiceImpl.configure - Envers integration enabled? : true {}
+[INFO ] 2019-05-21T09:55:20,526Z [main] type.BasicTypeRegistry.register - HHH000270: Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@684e8c9d {}
+[WARN ] 2019-05-21T09:55:20,640Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[WARN ] 2019-05-21T09:55:20,644Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[WARN ] 2019-05-21T09:55:20,645Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[INFO ] 2019-05-21T09:55:21,862Z [main] persistence.HibernateConfiguration.makeSessionFactoryForSchemas - Created session factory for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T09:55:21,932Z [main] migration.MigrationManager.validate - Current migration status: DB Version: 0.3, Expected Version: 0.3 {}
+[INFO ] 2019-05-21T09:55:21,947Z [main] internal.QueryTranslatorFactoryInitiator.initiateService - HHH000397: Using ASTQueryTranslatorFactory {}
+[INFO ] 2019-05-21T09:55:22,452Z [main] doorman.NetworkManagementServer.getNetworkMapService - Starting Network Map web service with minimum platform version
+[-1],
+newPKIOnly [false]
+network parameters: NetworkParameters {
+      minimumPlatformVersion=3
+      notaries=[NotaryInfo(identity=O=Notary, L=London, C=GB, validating=false)]
+      maxMessageSize=10485760
+      maxTransactionSize=10485760
+      whitelistedContractImplementations {
+        
+      }
+      eventHorizon=PT720H
+      packageOwnership {
+        
+      }
+      modifiedTime=2019-05-21T09:55:15.577Z
+      epoch=1
+  },
+and the EZM listening service on port: 20001 {}
+[INFO ] 2019-05-21T09:55:22,463Z [main] Netty Server[20001].start - Starting listening service on port:20001 ssl:disabled {}
+[INFO ] 2019-05-21T09:55:22,577Z [main] Netty Server[20001].start - Server listening on port 20001 ssl:disabled {}
+[INFO ] 2019-05-21T09:55:22,581Z [main] doorman.NetworkManagementServer.close - Shutting down Network Management server... {}
+[INFO ] 2019-05-21T09:55:24,803Z [main] pool.HikariPool.shutdown - HikariPool-1 - Close initiated... {}
+[INFO ] 2019-05-21T09:55:24,811Z [main] pool.HikariPool.shutdown - HikariPool-1 - Closed. {}
+[ERROR] 2019-05-21T09:55:24,812Z [main] ConsolePrint.uncaughtException - Error while executing Network Services command {}
+[ERROR] 2019-05-21T09:55:24,812Z [main] ConsolePrint.uncaughtException - Network Services configuration error: Failed to load certificates store. Please check your configuration: certificates/certificateStore.jks.
+Please consult running network services documentation. {}
+java.lang.IllegalArgumentException: Failed to load certificates store. Please check your configuration: certificates/certificateStore.jks
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.loadCertificateStoreAndValidate(NetworkManagementServer.kt:422) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.getNetworkMapService(NetworkManagementServer.kt:190) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.getService(NetworkManagementServer.kt:142) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.getServices(NetworkManagementServer.kt:125) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.start(NetworkManagementServer.kt:104) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.RunEZMCommand.startNetworkServicesContainer(RunEZMCommand.kt:190) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.RunEZMCommand.executeCommand(RunEZMCommand.kt:153) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.shared.utils.BaseCommand.run(CLIUtils.kt:103) ~[doorman.jar:?]
+	at picocli.CommandLine.execute(CommandLine.java:1043) ~[doorman.jar:?]
+	at picocli.CommandLine.access$900(CommandLine.java:142) ~[doorman.jar:?]
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:1246) ~[doorman.jar:?]
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:1214) ~[doorman.jar:?]
+	at picocli.CommandLine$AbstractParseResultHandler.handleParseResult(CommandLine.java:1122) ~[doorman.jar:?]
+	at picocli.CommandLine.parseWithHandlers(CommandLine.java:1405) ~[doorman.jar:?]
+	at picocli.CommandLine.run(CommandLine.java:1864) ~[doorman.jar:?]
+	at picocli.CommandLine.run(CommandLine.java:1794) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.MainKt.main(Main.kt:20) ~[doorman.jar:?]
+Caused by: java.nio.file.NoSuchFileException: certificates/certificateStore.jks
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86) ~[?:1.8.0_212]
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102) ~[?:1.8.0_212]
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107) ~[?:1.8.0_212]
+	at sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:214) ~[?:1.8.0_212]
+	at java.nio.file.Files.newByteChannel(Files.java:361) ~[?:1.8.0_212]
+	at java.nio.file.Files.newByteChannel(Files.java:407) ~[?:1.8.0_212]
+	at java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:384) ~[?:1.8.0_212]
+	at java.nio.file.Files.newInputStream(Files.java:152) ~[?:1.8.0_212]
+	at net.corda.core.internal.PathUtilsKt.inputStream(PathUtils.kt:132) ~[doorman.jar:?]
+	at net.corda.nodeapi.internal.crypto.KeyStoreUtilities.loadKeyStore(KeyStoreUtilities.kt:163) ~[doorman.jar:?]
+	at net.corda.nodeapi.internal.crypto.X509KeyStore$Companion.fromFile(X509KeyStore.kt:32) ~[doorman.jar:?]
+	at net.corda.nodeapi.internal.crypto.X509KeyStore$Companion.fromFile$default(X509KeyStore.kt:31) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServerConfig.loadCertificatesStore(ServiceConfigurations.kt:48) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.loadCertificateStoreAndValidate(NetworkManagementServer.kt:419) ~[doorman.jar:?]
+	... 16 more
+[INFO ] 2019-05-21T09:55:24,817Z [ShutdownHook] doorman.NetworkManagementServer.close - Shutting down Network Management server... {}
+[INFO ] 2019-05-21T09:55:26,930Z [main] doorman.RunEZMCommand.executeCommand - Starting Network Services... {}
+[INFO ] 2019-05-21T09:55:26,969Z [main] common.utils.invoke - {
+    # ./persistent/network-map.conf: 1
+    "address" : "0.0.0.0:20000",
+    # ./persistent/network-map.conf: 3
+    "certificatesStoreFile" : "certificates/certificateStore.jks",
+    # ./persistent/network-map.conf: 4
+    "certificatesStorePassword" : "example-password",
+    # ./persistent/network-map.conf: 6
+    "dataSourceProperties" : {
+        # ./persistent/network-map.conf: 10
+        "dataSource.password" : "example-password",
+        # ./persistent/network-map.conf: 8
+        "dataSource.url" : "jdbc:h2:file:./persistent/network-map-persistence;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=10000;WRITE_DELAY=0;AUTO_SERVER_PORT=0",
+        # ./persistent/network-map.conf: 9
+        "dataSource.user" : "example-user",
+        # ./persistent/network-map.conf: 7
+        "dataSourceClassName" : "org.h2.jdbcx.JdbcDataSource"
+    },
+    # ./persistent/network-map.conf: 13
+    "database" : {
+        # ./persistent/network-map.conf: 14
+        "runMigration" : true
+    },
+    # ./persistent/network-map.conf: 17
+    "networkMap" : {
+        # ./persistent/network-map.conf: 18
+        "cacheTimeout" : 15000,
+        # ./persistent/network-map.conf: 33
+        "checkRevocation" : false,
+        # ./persistent/network-map.conf: 29
+        "ezmListener" : {
+            # ./persistent/network-map.conf: 30
+            "port" : 20001
+        },
+        # ./persistent/network-map.conf: 19
+        "localSigner" : {
+            # ./persistent/network-map.conf: 25
+            "keyAlias" : "cordanetworkmap",
+            # ./persistent/network-map.conf: 24
+            "keyPassword" : "example-password",
+            # ./persistent/network-map.conf: 20
+            "keyStore" : {
+                # ./persistent/network-map.conf: 21
+                "file" : "certificates/caKeyStore.jks",
+                # ./persistent/network-map.conf: 22
+                "password" : "example-password"
+            },
+            # ./persistent/network-map.conf: 26
+            "signInterval" : 15000
+        },
+        # ./persistent/network-map.conf: 34
+        "privateNetworkAutoEnrolment" : false
+    },
+    # ./persistent/network-map.conf: 38
+    # This section can be removed if the interactive shell is not required
+    "shell" : {
+        # ./persistent/network-map.conf: 41
+        "password" : "example-password",
+        # ./persistent/network-map.conf: 39
+        "sshdPort" : 20002,
+        # ./persistent/network-map.conf: 40
+        "user" : "testuser"
+    }
+}
+ {}
+[INFO ] 2019-05-21T09:55:27,285Z [main] hikari.HikariDataSource.<init> - HikariPool-1 - Started. {}
+[INFO ] 2019-05-21T09:55:29,723Z [main] persistence.SchemaMigration.doRunMigration - defaultSchemaName=PUBLIC {}
+[INFO ] 2019-05-21T09:55:29,724Z [main] persistence.SchemaMigration.doRunMigration - liquibaseSchemaName=PUBLIC {}
+[INFO ] 2019-05-21T09:55:29,724Z [main] persistence.SchemaMigration.doRunMigration - outputDefaultSchema=true {}
+[INFO ] 2019-05-21T09:55:30,957Z [main] liquibase.info - Reading from PUBLIC.DATABASECHANGELOG {}
+[INFO ] 2019-05-21T09:55:31,024Z [main] liquibase.info - Successfully acquired change log lock {}
+[INFO ] 2019-05-21T09:55:31,028Z [main] liquibase.info - Successfully released change log lock {}
+[INFO ] 2019-05-21T09:55:31,085Z [main] persistence.HibernateConfiguration.<init> - Init HibernateConfiguration for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T09:55:31,088Z [main] persistence.HibernateConfiguration.makeSessionFactoryForSchemas - Creating session factory for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T09:55:31,163Z [main] hibernate.Version.logVersion - HHH000412: Hibernate Core {[WORKING]} {}
+[INFO ] 2019-05-21T09:55:31,164Z [main] cfg.Environment.<clinit> - HHH000206: hibernate.properties not found {}
+[INFO ] 2019-05-21T09:55:31,264Z [main] common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.0.4.Final} {}
+[INFO ] 2019-05-21T09:55:31,395Z [main] internal.ConnectionProviderInitiator.initiateService - HHH000130: Instantiating explicit connection provider: net.corda.nodeapi.internal.persistence.HibernateConfiguration$NodeDatabaseConnectionProvider {}
+[INFO ] 2019-05-21T09:55:31,417Z [main] dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect {}
+[INFO ] 2019-05-21T09:55:31,505Z [main] internal.EnversServiceImpl.configure - Envers integration enabled? : true {}
+[INFO ] 2019-05-21T09:55:31,509Z [main] type.BasicTypeRegistry.register - HHH000270: Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@684e8c9d {}
+[WARN ] 2019-05-21T09:55:31,673Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[WARN ] 2019-05-21T09:55:31,679Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[WARN ] 2019-05-21T09:55:31,681Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[INFO ] 2019-05-21T09:55:33,345Z [main] persistence.HibernateConfiguration.makeSessionFactoryForSchemas - Created session factory for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T09:55:33,462Z [main] migration.MigrationManager.validate - Current migration status: DB Version: 0.3, Expected Version: 0.3 {}
+[INFO ] 2019-05-21T09:55:33,484Z [main] internal.QueryTranslatorFactoryInitiator.initiateService - HHH000397: Using ASTQueryTranslatorFactory {}
+[INFO ] 2019-05-21T09:55:34,331Z [main] doorman.NetworkManagementServer.getNetworkMapService - Starting Network Map web service with minimum platform version
+[-1],
+newPKIOnly [false]
+network parameters: NetworkParameters {
+      minimumPlatformVersion=3
+      notaries=[NotaryInfo(identity=O=Notary, L=London, C=GB, validating=false)]
+      maxMessageSize=10485760
+      maxTransactionSize=10485760
+      whitelistedContractImplementations {
+        
+      }
+      eventHorizon=PT720H
+      packageOwnership {
+        
+      }
+      modifiedTime=2019-05-21T09:55:15.577Z
+      epoch=1
+  },
+and the EZM listening service on port: 20001 {}
+[INFO ] 2019-05-21T09:55:34,352Z [main] Netty Server[20001].start - Starting listening service on port:20001 ssl:disabled {}
+[INFO ] 2019-05-21T09:55:34,567Z [main] Netty Server[20001].start - Server listening on port 20001 ssl:disabled {}
+[INFO ] 2019-05-21T09:55:34,573Z [main] doorman.NetworkManagementServer.close - Shutting down Network Management server... {}
+[INFO ] 2019-05-21T09:55:36,795Z [main] pool.HikariPool.shutdown - HikariPool-1 - Close initiated... {}
+[INFO ] 2019-05-21T09:55:36,803Z [main] pool.HikariPool.shutdown - HikariPool-1 - Closed. {}
+[ERROR] 2019-05-21T09:55:36,804Z [main] ConsolePrint.uncaughtException - Error while executing Network Services command {}
+[ERROR] 2019-05-21T09:55:36,804Z [main] ConsolePrint.uncaughtException - Network Services configuration error: Failed to load certificates store. Please check your configuration: certificates/certificateStore.jks.
+Please consult running network services documentation. {}
+java.lang.IllegalArgumentException: Failed to load certificates store. Please check your configuration: certificates/certificateStore.jks
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.loadCertificateStoreAndValidate(NetworkManagementServer.kt:422) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.getNetworkMapService(NetworkManagementServer.kt:190) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.getService(NetworkManagementServer.kt:142) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.getServices(NetworkManagementServer.kt:125) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.start(NetworkManagementServer.kt:104) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.RunEZMCommand.startNetworkServicesContainer(RunEZMCommand.kt:190) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.RunEZMCommand.executeCommand(RunEZMCommand.kt:153) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.shared.utils.BaseCommand.run(CLIUtils.kt:103) ~[doorman.jar:?]
+	at picocli.CommandLine.execute(CommandLine.java:1043) ~[doorman.jar:?]
+	at picocli.CommandLine.access$900(CommandLine.java:142) ~[doorman.jar:?]
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:1246) ~[doorman.jar:?]
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:1214) ~[doorman.jar:?]
+	at picocli.CommandLine$AbstractParseResultHandler.handleParseResult(CommandLine.java:1122) ~[doorman.jar:?]
+	at picocli.CommandLine.parseWithHandlers(CommandLine.java:1405) ~[doorman.jar:?]
+	at picocli.CommandLine.run(CommandLine.java:1864) ~[doorman.jar:?]
+	at picocli.CommandLine.run(CommandLine.java:1794) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.MainKt.main(Main.kt:20) ~[doorman.jar:?]
+Caused by: java.nio.file.NoSuchFileException: certificates/certificateStore.jks
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86) ~[?:1.8.0_212]
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102) ~[?:1.8.0_212]
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107) ~[?:1.8.0_212]
+	at sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:214) ~[?:1.8.0_212]
+	at java.nio.file.Files.newByteChannel(Files.java:361) ~[?:1.8.0_212]
+	at java.nio.file.Files.newByteChannel(Files.java:407) ~[?:1.8.0_212]
+	at java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:384) ~[?:1.8.0_212]
+	at java.nio.file.Files.newInputStream(Files.java:152) ~[?:1.8.0_212]
+	at net.corda.core.internal.PathUtilsKt.inputStream(PathUtils.kt:132) ~[doorman.jar:?]
+	at net.corda.nodeapi.internal.crypto.KeyStoreUtilities.loadKeyStore(KeyStoreUtilities.kt:163) ~[doorman.jar:?]
+	at net.corda.nodeapi.internal.crypto.X509KeyStore$Companion.fromFile(X509KeyStore.kt:32) ~[doorman.jar:?]
+	at net.corda.nodeapi.internal.crypto.X509KeyStore$Companion.fromFile$default(X509KeyStore.kt:31) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServerConfig.loadCertificatesStore(ServiceConfigurations.kt:48) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.loadCertificateStoreAndValidate(NetworkManagementServer.kt:419) ~[doorman.jar:?]
+	... 16 more
+[INFO ] 2019-05-21T09:55:36,811Z [ShutdownHook] doorman.NetworkManagementServer.close - Shutting down Network Management server... {}
+[INFO ] 2019-05-21T09:55:52,368Z [main] doorman.RunEZMCommand.executeCommand - Starting Network Services... {}
+[INFO ] 2019-05-21T09:55:52,408Z [main] common.utils.invoke - {
+    # ./persistent/network-map.conf: 1
+    "address" : "0.0.0.0:20000",
+    # ./persistent/network-map.conf: 3
+    "certificatesStoreFile" : "certificates/certificateStore.jks",
+    # ./persistent/network-map.conf: 4
+    "certificatesStorePassword" : "example-password",
+    # ./persistent/network-map.conf: 6
+    "dataSourceProperties" : {
+        # ./persistent/network-map.conf: 10
+        "dataSource.password" : "example-password",
+        # ./persistent/network-map.conf: 8
+        "dataSource.url" : "jdbc:h2:file:./persistent/network-map-persistence;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=10000;WRITE_DELAY=0;AUTO_SERVER_PORT=0",
+        # ./persistent/network-map.conf: 9
+        "dataSource.user" : "example-user",
+        # ./persistent/network-map.conf: 7
+        "dataSourceClassName" : "org.h2.jdbcx.JdbcDataSource"
+    },
+    # ./persistent/network-map.conf: 13
+    "database" : {
+        # ./persistent/network-map.conf: 14
+        "runMigration" : true
+    },
+    # ./persistent/network-map.conf: 17
+    "networkMap" : {
+        # ./persistent/network-map.conf: 18
+        "cacheTimeout" : 15000,
+        # ./persistent/network-map.conf: 33
+        "checkRevocation" : false,
+        # ./persistent/network-map.conf: 29
+        "ezmListener" : {
+            # ./persistent/network-map.conf: 30
+            "port" : 20001
+        },
+        # ./persistent/network-map.conf: 19
+        "localSigner" : {
+            # ./persistent/network-map.conf: 25
+            "keyAlias" : "cordanetworkmap",
+            # ./persistent/network-map.conf: 24
+            "keyPassword" : "example-password",
+            # ./persistent/network-map.conf: 20
+            "keyStore" : {
+                # ./persistent/network-map.conf: 21
+                "file" : "certificates/caKeyStore.jks",
+                # ./persistent/network-map.conf: 22
+                "password" : "example-password"
+            },
+            # ./persistent/network-map.conf: 26
+            "signInterval" : 15000
+        },
+        # ./persistent/network-map.conf: 34
+        "privateNetworkAutoEnrolment" : false
+    },
+    # ./persistent/network-map.conf: 38
+    # This section can be removed if the interactive shell is not required
+    "shell" : {
+        # ./persistent/network-map.conf: 41
+        "password" : "example-password",
+        # ./persistent/network-map.conf: 39
+        "sshdPort" : 20002,
+        # ./persistent/network-map.conf: 40
+        "user" : "testuser"
+    }
+}
+ {}
+[INFO ] 2019-05-21T09:55:52,713Z [main] hikari.HikariDataSource.<init> - HikariPool-1 - Started. {}
+[INFO ] 2019-05-21T09:55:55,012Z [main] persistence.SchemaMigration.doRunMigration - defaultSchemaName=PUBLIC {}
+[INFO ] 2019-05-21T09:55:55,013Z [main] persistence.SchemaMigration.doRunMigration - liquibaseSchemaName=PUBLIC {}
+[INFO ] 2019-05-21T09:55:55,013Z [main] persistence.SchemaMigration.doRunMigration - outputDefaultSchema=true {}
+[INFO ] 2019-05-21T09:55:55,865Z [main] liquibase.info - Reading from PUBLIC.DATABASECHANGELOG {}
+[INFO ] 2019-05-21T09:55:55,894Z [main] liquibase.info - Successfully acquired change log lock {}
+[INFO ] 2019-05-21T09:55:55,898Z [main] liquibase.info - Successfully released change log lock {}
+[INFO ] 2019-05-21T09:55:55,946Z [main] persistence.HibernateConfiguration.<init> - Init HibernateConfiguration for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T09:55:55,948Z [main] persistence.HibernateConfiguration.makeSessionFactoryForSchemas - Creating session factory for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T09:55:56,010Z [main] hibernate.Version.logVersion - HHH000412: Hibernate Core {[WORKING]} {}
+[INFO ] 2019-05-21T09:55:56,011Z [main] cfg.Environment.<clinit> - HHH000206: hibernate.properties not found {}
+[INFO ] 2019-05-21T09:55:56,093Z [main] common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.0.4.Final} {}
+[INFO ] 2019-05-21T09:55:56,167Z [main] internal.ConnectionProviderInitiator.initiateService - HHH000130: Instantiating explicit connection provider: net.corda.nodeapi.internal.persistence.HibernateConfiguration$NodeDatabaseConnectionProvider {}
+[INFO ] 2019-05-21T09:55:56,181Z [main] dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect {}
+[INFO ] 2019-05-21T09:55:56,215Z [main] internal.EnversServiceImpl.configure - Envers integration enabled? : true {}
+[INFO ] 2019-05-21T09:55:56,217Z [main] type.BasicTypeRegistry.register - HHH000270: Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@684e8c9d {}
+[WARN ] 2019-05-21T09:55:56,327Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[WARN ] 2019-05-21T09:55:56,331Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[WARN ] 2019-05-21T09:55:56,331Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[INFO ] 2019-05-21T09:55:57,507Z [main] persistence.HibernateConfiguration.makeSessionFactoryForSchemas - Created session factory for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T09:55:57,577Z [main] migration.MigrationManager.validate - Current migration status: DB Version: 0.3, Expected Version: 0.3 {}
+[INFO ] 2019-05-21T09:55:57,592Z [main] internal.QueryTranslatorFactoryInitiator.initiateService - HHH000397: Using ASTQueryTranslatorFactory {}
+[INFO ] 2019-05-21T09:55:58,033Z [main] doorman.NetworkManagementServer.getNetworkMapService - Starting Network Map web service with minimum platform version
+[-1],
+newPKIOnly [false]
+network parameters: NetworkParameters {
+      minimumPlatformVersion=3
+      notaries=[NotaryInfo(identity=O=Notary, L=London, C=GB, validating=false)]
+      maxMessageSize=10485760
+      maxTransactionSize=10485760
+      whitelistedContractImplementations {
+        
+      }
+      eventHorizon=PT720H
+      packageOwnership {
+        
+      }
+      modifiedTime=2019-05-21T09:55:15.577Z
+      epoch=1
+  },
+and the EZM listening service on port: 20001 {}
+[INFO ] 2019-05-21T09:55:58,044Z [main] Netty Server[20001].start - Starting listening service on port:20001 ssl:disabled {}
+[INFO ] 2019-05-21T09:55:58,149Z [main] Netty Server[20001].start - Server listening on port 20001 ssl:disabled {}
+[INFO ] 2019-05-21T09:55:58,154Z [main] doorman.NetworkManagementServer.close - Shutting down Network Management server... {}
+[INFO ] 2019-05-21T09:56:00,378Z [main] pool.HikariPool.shutdown - HikariPool-1 - Close initiated... {}
+[INFO ] 2019-05-21T09:56:00,393Z [main] pool.HikariPool.shutdown - HikariPool-1 - Closed. {}
+[ERROR] 2019-05-21T09:56:00,395Z [main] ConsolePrint.uncaughtException - Error while executing Network Services command {}
+[ERROR] 2019-05-21T09:56:00,396Z [main] ConsolePrint.uncaughtException - Network Services configuration error: Failed to load certificates store. Please check your configuration: certificates/certificateStore.jks.
+Please consult running network services documentation. {}
+java.lang.IllegalArgumentException: Failed to load certificates store. Please check your configuration: certificates/certificateStore.jks
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.loadCertificateStoreAndValidate(NetworkManagementServer.kt:422) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.getNetworkMapService(NetworkManagementServer.kt:190) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.getService(NetworkManagementServer.kt:142) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.getServices(NetworkManagementServer.kt:125) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.start(NetworkManagementServer.kt:104) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.RunEZMCommand.startNetworkServicesContainer(RunEZMCommand.kt:190) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.RunEZMCommand.executeCommand(RunEZMCommand.kt:153) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.shared.utils.BaseCommand.run(CLIUtils.kt:103) ~[doorman.jar:?]
+	at picocli.CommandLine.execute(CommandLine.java:1043) ~[doorman.jar:?]
+	at picocli.CommandLine.access$900(CommandLine.java:142) ~[doorman.jar:?]
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:1246) ~[doorman.jar:?]
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:1214) ~[doorman.jar:?]
+	at picocli.CommandLine$AbstractParseResultHandler.handleParseResult(CommandLine.java:1122) ~[doorman.jar:?]
+	at picocli.CommandLine.parseWithHandlers(CommandLine.java:1405) ~[doorman.jar:?]
+	at picocli.CommandLine.run(CommandLine.java:1864) ~[doorman.jar:?]
+	at picocli.CommandLine.run(CommandLine.java:1794) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.MainKt.main(Main.kt:20) ~[doorman.jar:?]
+Caused by: java.nio.file.NoSuchFileException: certificates/certificateStore.jks
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86) ~[?:1.8.0_212]
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102) ~[?:1.8.0_212]
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107) ~[?:1.8.0_212]
+	at sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:214) ~[?:1.8.0_212]
+	at java.nio.file.Files.newByteChannel(Files.java:361) ~[?:1.8.0_212]
+	at java.nio.file.Files.newByteChannel(Files.java:407) ~[?:1.8.0_212]
+	at java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:384) ~[?:1.8.0_212]
+	at java.nio.file.Files.newInputStream(Files.java:152) ~[?:1.8.0_212]
+	at net.corda.core.internal.PathUtilsKt.inputStream(PathUtils.kt:132) ~[doorman.jar:?]
+	at net.corda.nodeapi.internal.crypto.KeyStoreUtilities.loadKeyStore(KeyStoreUtilities.kt:163) ~[doorman.jar:?]
+	at net.corda.nodeapi.internal.crypto.X509KeyStore$Companion.fromFile(X509KeyStore.kt:32) ~[doorman.jar:?]
+	at net.corda.nodeapi.internal.crypto.X509KeyStore$Companion.fromFile$default(X509KeyStore.kt:31) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServerConfig.loadCertificatesStore(ServiceConfigurations.kt:48) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.loadCertificateStoreAndValidate(NetworkManagementServer.kt:419) ~[doorman.jar:?]
+	... 16 more
+[INFO ] 2019-05-21T09:56:00,401Z [ShutdownHook] doorman.NetworkManagementServer.close - Shutting down Network Management server... {}
+[INFO ] 2019-05-21T09:56:26,337Z [main] doorman.RunEZMCommand.executeCommand - Starting Network Services... {}
+[INFO ] 2019-05-21T09:56:26,375Z [main] common.utils.invoke - {
+    # ./persistent/network-map.conf: 1
+    "address" : "0.0.0.0:20000",
+    # ./persistent/network-map.conf: 3
+    "certificatesStoreFile" : "certificates/certificateStore.jks",
+    # ./persistent/network-map.conf: 4
+    "certificatesStorePassword" : "example-password",
+    # ./persistent/network-map.conf: 6
+    "dataSourceProperties" : {
+        # ./persistent/network-map.conf: 10
+        "dataSource.password" : "example-password",
+        # ./persistent/network-map.conf: 8
+        "dataSource.url" : "jdbc:h2:file:./persistent/network-map-persistence;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=10000;WRITE_DELAY=0;AUTO_SERVER_PORT=0",
+        # ./persistent/network-map.conf: 9
+        "dataSource.user" : "example-user",
+        # ./persistent/network-map.conf: 7
+        "dataSourceClassName" : "org.h2.jdbcx.JdbcDataSource"
+    },
+    # ./persistent/network-map.conf: 13
+    "database" : {
+        # ./persistent/network-map.conf: 14
+        "runMigration" : true
+    },
+    # ./persistent/network-map.conf: 17
+    "networkMap" : {
+        # ./persistent/network-map.conf: 18
+        "cacheTimeout" : 15000,
+        # ./persistent/network-map.conf: 33
+        "checkRevocation" : false,
+        # ./persistent/network-map.conf: 29
+        "ezmListener" : {
+            # ./persistent/network-map.conf: 30
+            "port" : 20001
+        },
+        # ./persistent/network-map.conf: 19
+        "localSigner" : {
+            # ./persistent/network-map.conf: 25
+            "keyAlias" : "cordanetworkmap",
+            # ./persistent/network-map.conf: 24
+            "keyPassword" : "example-password",
+            # ./persistent/network-map.conf: 20
+            "keyStore" : {
+                # ./persistent/network-map.conf: 21
+                "file" : "certificates/caKeyStore.jks",
+                # ./persistent/network-map.conf: 22
+                "password" : "example-password"
+            },
+            # ./persistent/network-map.conf: 26
+            "signInterval" : 15000
+        },
+        # ./persistent/network-map.conf: 34
+        "privateNetworkAutoEnrolment" : false
+    },
+    # ./persistent/network-map.conf: 38
+    # This section can be removed if the interactive shell is not required
+    "shell" : {
+        # ./persistent/network-map.conf: 41
+        "password" : "example-password",
+        # ./persistent/network-map.conf: 39
+        "sshdPort" : 20002,
+        # ./persistent/network-map.conf: 40
+        "user" : "testuser"
+    }
+}
+ {}
+[INFO ] 2019-05-21T09:56:26,690Z [main] hikari.HikariDataSource.<init> - HikariPool-1 - Started. {}
+[INFO ] 2019-05-21T09:56:29,053Z [main] persistence.SchemaMigration.doRunMigration - defaultSchemaName=PUBLIC {}
+[INFO ] 2019-05-21T09:56:29,053Z [main] persistence.SchemaMigration.doRunMigration - liquibaseSchemaName=PUBLIC {}
+[INFO ] 2019-05-21T09:56:29,054Z [main] persistence.SchemaMigration.doRunMigration - outputDefaultSchema=true {}
+[INFO ] 2019-05-21T09:56:29,906Z [main] liquibase.info - Reading from PUBLIC.DATABASECHANGELOG {}
+[INFO ] 2019-05-21T09:56:29,936Z [main] liquibase.info - Successfully acquired change log lock {}
+[INFO ] 2019-05-21T09:56:29,939Z [main] liquibase.info - Successfully released change log lock {}
+[INFO ] 2019-05-21T09:56:29,987Z [main] persistence.HibernateConfiguration.<init> - Init HibernateConfiguration for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T09:56:29,991Z [main] persistence.HibernateConfiguration.makeSessionFactoryForSchemas - Creating session factory for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T09:56:30,053Z [main] hibernate.Version.logVersion - HHH000412: Hibernate Core {[WORKING]} {}
+[INFO ] 2019-05-21T09:56:30,054Z [main] cfg.Environment.<clinit> - HHH000206: hibernate.properties not found {}
+[INFO ] 2019-05-21T09:56:30,135Z [main] common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.0.4.Final} {}
+[INFO ] 2019-05-21T09:56:30,208Z [main] internal.ConnectionProviderInitiator.initiateService - HHH000130: Instantiating explicit connection provider: net.corda.nodeapi.internal.persistence.HibernateConfiguration$NodeDatabaseConnectionProvider {}
+[INFO ] 2019-05-21T09:56:30,222Z [main] dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect {}
+[INFO ] 2019-05-21T09:56:30,257Z [main] internal.EnversServiceImpl.configure - Envers integration enabled? : true {}
+[INFO ] 2019-05-21T09:56:30,259Z [main] type.BasicTypeRegistry.register - HHH000270: Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@684e8c9d {}
+[WARN ] 2019-05-21T09:56:30,369Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[WARN ] 2019-05-21T09:56:30,373Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[WARN ] 2019-05-21T09:56:30,374Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[INFO ] 2019-05-21T09:56:31,557Z [main] persistence.HibernateConfiguration.makeSessionFactoryForSchemas - Created session factory for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T09:56:31,628Z [main] migration.MigrationManager.validate - Current migration status: DB Version: 0.3, Expected Version: 0.3 {}
+[INFO ] 2019-05-21T09:56:31,644Z [main] internal.QueryTranslatorFactoryInitiator.initiateService - HHH000397: Using ASTQueryTranslatorFactory {}
+[INFO ] 2019-05-21T09:56:32,117Z [main] doorman.NetworkManagementServer.getNetworkMapService - Starting Network Map web service with minimum platform version
+[-1],
+newPKIOnly [false]
+network parameters: NetworkParameters {
+      minimumPlatformVersion=3
+      notaries=[NotaryInfo(identity=O=Notary, L=London, C=GB, validating=false)]
+      maxMessageSize=10485760
+      maxTransactionSize=10485760
+      whitelistedContractImplementations {
+        
+      }
+      eventHorizon=PT720H
+      packageOwnership {
+        
+      }
+      modifiedTime=2019-05-21T09:55:15.577Z
+      epoch=1
+  },
+and the EZM listening service on port: 20001 {}
+[INFO ] 2019-05-21T09:56:32,128Z [main] Netty Server[20001].start - Starting listening service on port:20001 ssl:disabled {}
+[INFO ] 2019-05-21T09:56:32,225Z [main] Netty Server[20001].start - Server listening on port 20001 ssl:disabled {}
+[INFO ] 2019-05-21T09:56:32,229Z [main] doorman.NetworkManagementServer.close - Shutting down Network Management server... {}
+[INFO ] 2019-05-21T09:56:34,446Z [main] pool.HikariPool.shutdown - HikariPool-1 - Close initiated... {}
+[INFO ] 2019-05-21T09:56:34,455Z [main] pool.HikariPool.shutdown - HikariPool-1 - Closed. {}
+[ERROR] 2019-05-21T09:56:34,456Z [main] ConsolePrint.uncaughtException - Error while executing Network Services command {}
+[ERROR] 2019-05-21T09:56:34,457Z [main] ConsolePrint.uncaughtException - Network Services configuration error: Failed to load certificates store. Please check your configuration: certificates/certificateStore.jks.
+Please consult running network services documentation. {}
+java.lang.IllegalArgumentException: Failed to load certificates store. Please check your configuration: certificates/certificateStore.jks
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.loadCertificateStoreAndValidate(NetworkManagementServer.kt:422) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.getNetworkMapService(NetworkManagementServer.kt:190) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.getService(NetworkManagementServer.kt:142) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.getServices(NetworkManagementServer.kt:125) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.start(NetworkManagementServer.kt:104) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.RunEZMCommand.startNetworkServicesContainer(RunEZMCommand.kt:190) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.RunEZMCommand.executeCommand(RunEZMCommand.kt:153) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.shared.utils.BaseCommand.run(CLIUtils.kt:103) ~[doorman.jar:?]
+	at picocli.CommandLine.execute(CommandLine.java:1043) ~[doorman.jar:?]
+	at picocli.CommandLine.access$900(CommandLine.java:142) ~[doorman.jar:?]
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:1246) ~[doorman.jar:?]
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:1214) ~[doorman.jar:?]
+	at picocli.CommandLine$AbstractParseResultHandler.handleParseResult(CommandLine.java:1122) ~[doorman.jar:?]
+	at picocli.CommandLine.parseWithHandlers(CommandLine.java:1405) ~[doorman.jar:?]
+	at picocli.CommandLine.run(CommandLine.java:1864) ~[doorman.jar:?]
+	at picocli.CommandLine.run(CommandLine.java:1794) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.MainKt.main(Main.kt:20) ~[doorman.jar:?]
+Caused by: java.nio.file.NoSuchFileException: certificates/certificateStore.jks
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86) ~[?:1.8.0_212]
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102) ~[?:1.8.0_212]
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107) ~[?:1.8.0_212]
+	at sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:214) ~[?:1.8.0_212]
+	at java.nio.file.Files.newByteChannel(Files.java:361) ~[?:1.8.0_212]
+	at java.nio.file.Files.newByteChannel(Files.java:407) ~[?:1.8.0_212]
+	at java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:384) ~[?:1.8.0_212]
+	at java.nio.file.Files.newInputStream(Files.java:152) ~[?:1.8.0_212]
+	at net.corda.core.internal.PathUtilsKt.inputStream(PathUtils.kt:132) ~[doorman.jar:?]
+	at net.corda.nodeapi.internal.crypto.KeyStoreUtilities.loadKeyStore(KeyStoreUtilities.kt:163) ~[doorman.jar:?]
+	at net.corda.nodeapi.internal.crypto.X509KeyStore$Companion.fromFile(X509KeyStore.kt:32) ~[doorman.jar:?]
+	at net.corda.nodeapi.internal.crypto.X509KeyStore$Companion.fromFile$default(X509KeyStore.kt:31) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServerConfig.loadCertificatesStore(ServiceConfigurations.kt:48) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.loadCertificateStoreAndValidate(NetworkManagementServer.kt:419) ~[doorman.jar:?]
+	... 16 more
+[INFO ] 2019-05-21T09:56:34,462Z [ShutdownHook] doorman.NetworkManagementServer.close - Shutting down Network Management server... {}
+[INFO ] 2019-05-21T09:57:18,295Z [main] doorman.RunEZMCommand.executeCommand - Starting Network Services... {}
+[INFO ] 2019-05-21T09:57:18,333Z [main] common.utils.invoke - {
+    # ./persistent/network-map.conf: 1
+    "address" : "0.0.0.0:20000",
+    # ./persistent/network-map.conf: 3
+    "certificatesStoreFile" : "certificates/certificateStore.jks",
+    # ./persistent/network-map.conf: 4
+    "certificatesStorePassword" : "example-password",
+    # ./persistent/network-map.conf: 6
+    "dataSourceProperties" : {
+        # ./persistent/network-map.conf: 10
+        "dataSource.password" : "example-password",
+        # ./persistent/network-map.conf: 8
+        "dataSource.url" : "jdbc:h2:file:./persistent/network-map-persistence;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=10000;WRITE_DELAY=0;AUTO_SERVER_PORT=0",
+        # ./persistent/network-map.conf: 9
+        "dataSource.user" : "example-user",
+        # ./persistent/network-map.conf: 7
+        "dataSourceClassName" : "org.h2.jdbcx.JdbcDataSource"
+    },
+    # ./persistent/network-map.conf: 13
+    "database" : {
+        # ./persistent/network-map.conf: 14
+        "runMigration" : true
+    },
+    # ./persistent/network-map.conf: 17
+    "networkMap" : {
+        # ./persistent/network-map.conf: 18
+        "cacheTimeout" : 15000,
+        # ./persistent/network-map.conf: 33
+        "checkRevocation" : false,
+        # ./persistent/network-map.conf: 29
+        "ezmListener" : {
+            # ./persistent/network-map.conf: 30
+            "port" : 20001
+        },
+        # ./persistent/network-map.conf: 19
+        "localSigner" : {
+            # ./persistent/network-map.conf: 25
+            "keyAlias" : "cordanetworkmap",
+            # ./persistent/network-map.conf: 24
+            "keyPassword" : "example-password",
+            # ./persistent/network-map.conf: 20
+            "keyStore" : {
+                # ./persistent/network-map.conf: 21
+                "file" : "certificates/caKeyStore.jks",
+                # ./persistent/network-map.conf: 22
+                "password" : "example-password"
+            },
+            # ./persistent/network-map.conf: 26
+            "signInterval" : 15000
+        },
+        # ./persistent/network-map.conf: 34
+        "privateNetworkAutoEnrolment" : false
+    },
+    # ./persistent/network-map.conf: 38
+    # This section can be removed if the interactive shell is not required
+    "shell" : {
+        # ./persistent/network-map.conf: 41
+        "password" : "example-password",
+        # ./persistent/network-map.conf: 39
+        "sshdPort" : 20002,
+        # ./persistent/network-map.conf: 40
+        "user" : "testuser"
+    }
+}
+ {}
+[INFO ] 2019-05-21T09:57:18,645Z [main] hikari.HikariDataSource.<init> - HikariPool-1 - Started. {}
+[INFO ] 2019-05-21T09:57:20,924Z [main] persistence.SchemaMigration.doRunMigration - defaultSchemaName=PUBLIC {}
+[INFO ] 2019-05-21T09:57:20,925Z [main] persistence.SchemaMigration.doRunMigration - liquibaseSchemaName=PUBLIC {}
+[INFO ] 2019-05-21T09:57:20,926Z [main] persistence.SchemaMigration.doRunMigration - outputDefaultSchema=true {}
+[INFO ] 2019-05-21T09:57:21,765Z [main] liquibase.info - Reading from PUBLIC.DATABASECHANGELOG {}
+[INFO ] 2019-05-21T09:57:21,792Z [main] liquibase.info - Successfully acquired change log lock {}
+[INFO ] 2019-05-21T09:57:21,795Z [main] liquibase.info - Successfully released change log lock {}
+[INFO ] 2019-05-21T09:57:21,861Z [main] persistence.HibernateConfiguration.<init> - Init HibernateConfiguration for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T09:57:21,864Z [main] persistence.HibernateConfiguration.makeSessionFactoryForSchemas - Creating session factory for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T09:57:21,925Z [main] hibernate.Version.logVersion - HHH000412: Hibernate Core {[WORKING]} {}
+[INFO ] 2019-05-21T09:57:21,927Z [main] cfg.Environment.<clinit> - HHH000206: hibernate.properties not found {}
+[INFO ] 2019-05-21T09:57:22,008Z [main] common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.0.4.Final} {}
+[INFO ] 2019-05-21T09:57:22,081Z [main] internal.ConnectionProviderInitiator.initiateService - HHH000130: Instantiating explicit connection provider: net.corda.nodeapi.internal.persistence.HibernateConfiguration$NodeDatabaseConnectionProvider {}
+[INFO ] 2019-05-21T09:57:22,095Z [main] dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect {}
+[INFO ] 2019-05-21T09:57:22,129Z [main] internal.EnversServiceImpl.configure - Envers integration enabled? : true {}
+[INFO ] 2019-05-21T09:57:22,131Z [main] type.BasicTypeRegistry.register - HHH000270: Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@684e8c9d {}
+[WARN ] 2019-05-21T09:57:22,239Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[WARN ] 2019-05-21T09:57:22,243Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[WARN ] 2019-05-21T09:57:22,244Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[INFO ] 2019-05-21T09:57:23,446Z [main] persistence.HibernateConfiguration.makeSessionFactoryForSchemas - Created session factory for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T09:57:23,524Z [main] migration.MigrationManager.validate - Current migration status: DB Version: 0.3, Expected Version: 0.3 {}
+[INFO ] 2019-05-21T09:57:23,540Z [main] internal.QueryTranslatorFactoryInitiator.initiateService - HHH000397: Using ASTQueryTranslatorFactory {}
+[INFO ] 2019-05-21T09:57:24,020Z [main] doorman.NetworkManagementServer.getNetworkMapService - Starting Network Map web service with minimum platform version
+[-1],
+newPKIOnly [false]
+network parameters: NetworkParameters {
+      minimumPlatformVersion=3
+      notaries=[NotaryInfo(identity=O=Notary, L=London, C=GB, validating=false)]
+      maxMessageSize=10485760
+      maxTransactionSize=10485760
+      whitelistedContractImplementations {
+        
+      }
+      eventHorizon=PT720H
+      packageOwnership {
+        
+      }
+      modifiedTime=2019-05-21T09:55:15.577Z
+      epoch=1
+  },
+and the EZM listening service on port: 20001 {}
+[INFO ] 2019-05-21T09:57:24,032Z [main] Netty Server[20001].start - Starting listening service on port:20001 ssl:disabled {}
+[INFO ] 2019-05-21T09:57:24,137Z [main] Netty Server[20001].start - Server listening on port 20001 ssl:disabled {}
+[INFO ] 2019-05-21T09:57:24,141Z [main] doorman.NetworkManagementServer.close - Shutting down Network Management server... {}
+[INFO ] 2019-05-21T09:57:26,356Z [main] pool.HikariPool.shutdown - HikariPool-1 - Close initiated... {}
+[INFO ] 2019-05-21T09:57:26,364Z [main] pool.HikariPool.shutdown - HikariPool-1 - Closed. {}
+[ERROR] 2019-05-21T09:57:26,365Z [main] ConsolePrint.uncaughtException - Error while executing Network Services command {}
+[ERROR] 2019-05-21T09:57:26,366Z [main] ConsolePrint.uncaughtException - Network Services configuration error: Failed to load certificates store. Please check your configuration: certificates/certificateStore.jks.
+Please consult running network services documentation. {}
+java.lang.IllegalArgumentException: Failed to load certificates store. Please check your configuration: certificates/certificateStore.jks
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.loadCertificateStoreAndValidate(NetworkManagementServer.kt:422) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.getNetworkMapService(NetworkManagementServer.kt:190) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.getService(NetworkManagementServer.kt:142) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.getServices(NetworkManagementServer.kt:125) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.start(NetworkManagementServer.kt:104) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.RunEZMCommand.startNetworkServicesContainer(RunEZMCommand.kt:190) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.RunEZMCommand.executeCommand(RunEZMCommand.kt:153) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.shared.utils.BaseCommand.run(CLIUtils.kt:103) ~[doorman.jar:?]
+	at picocli.CommandLine.execute(CommandLine.java:1043) ~[doorman.jar:?]
+	at picocli.CommandLine.access$900(CommandLine.java:142) ~[doorman.jar:?]
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:1246) ~[doorman.jar:?]
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:1214) ~[doorman.jar:?]
+	at picocli.CommandLine$AbstractParseResultHandler.handleParseResult(CommandLine.java:1122) ~[doorman.jar:?]
+	at picocli.CommandLine.parseWithHandlers(CommandLine.java:1405) ~[doorman.jar:?]
+	at picocli.CommandLine.run(CommandLine.java:1864) ~[doorman.jar:?]
+	at picocli.CommandLine.run(CommandLine.java:1794) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.MainKt.main(Main.kt:20) ~[doorman.jar:?]
+Caused by: java.nio.file.NoSuchFileException: certificates/certificateStore.jks
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86) ~[?:1.8.0_212]
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102) ~[?:1.8.0_212]
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107) ~[?:1.8.0_212]
+	at sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:214) ~[?:1.8.0_212]
+	at java.nio.file.Files.newByteChannel(Files.java:361) ~[?:1.8.0_212]
+	at java.nio.file.Files.newByteChannel(Files.java:407) ~[?:1.8.0_212]
+	at java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:384) ~[?:1.8.0_212]
+	at java.nio.file.Files.newInputStream(Files.java:152) ~[?:1.8.0_212]
+	at net.corda.core.internal.PathUtilsKt.inputStream(PathUtils.kt:132) ~[doorman.jar:?]
+	at net.corda.nodeapi.internal.crypto.KeyStoreUtilities.loadKeyStore(KeyStoreUtilities.kt:163) ~[doorman.jar:?]
+	at net.corda.nodeapi.internal.crypto.X509KeyStore$Companion.fromFile(X509KeyStore.kt:32) ~[doorman.jar:?]
+	at net.corda.nodeapi.internal.crypto.X509KeyStore$Companion.fromFile$default(X509KeyStore.kt:31) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServerConfig.loadCertificatesStore(ServiceConfigurations.kt:48) ~[doorman.jar:?]
+	at com.r3.corda.networkmanage.doorman.NetworkManagementServer.loadCertificateStoreAndValidate(NetworkManagementServer.kt:419) ~[doorman.jar:?]
+	... 16 more
+[INFO ] 2019-05-21T09:57:26,371Z [ShutdownHook] doorman.NetworkManagementServer.close - Shutting down Network Management server... {}
+[INFO ] 2019-05-21T09:58:48,354Z [main] doorman.RunEZMCommand.executeCommand - Starting Network Services... {}
+[INFO ] 2019-05-21T09:58:48,393Z [main] common.utils.invoke - {
+    # ./persistent/network-map.conf: 1
+    "address" : "0.0.0.0:20000",
+    # ./persistent/network-map.conf: 3
+    "certificatesStoreFile" : "persistent/certificateStore.jks",
+    # ./persistent/network-map.conf: 4
+    "certificatesStorePassword" : "example-password",
+    # ./persistent/network-map.conf: 6
+    "dataSourceProperties" : {
+        # ./persistent/network-map.conf: 10
+        "dataSource.password" : "example-password",
+        # ./persistent/network-map.conf: 8
+        "dataSource.url" : "jdbc:h2:file:./persistent/network-map-persistence;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=10000;WRITE_DELAY=0;AUTO_SERVER_PORT=0",
+        # ./persistent/network-map.conf: 9
+        "dataSource.user" : "example-user",
+        # ./persistent/network-map.conf: 7
+        "dataSourceClassName" : "org.h2.jdbcx.JdbcDataSource"
+    },
+    # ./persistent/network-map.conf: 13
+    "database" : {
+        # ./persistent/network-map.conf: 14
+        "runMigration" : true
+    },
+    # ./persistent/network-map.conf: 17
+    "networkMap" : {
+        # ./persistent/network-map.conf: 18
+        "cacheTimeout" : 15000,
+        # ./persistent/network-map.conf: 33
+        "checkRevocation" : false,
+        # ./persistent/network-map.conf: 29
+        "ezmListener" : {
+            # ./persistent/network-map.conf: 30
+            "port" : 20001
+        },
+        # ./persistent/network-map.conf: 19
+        "localSigner" : {
+            # ./persistent/network-map.conf: 25
+            "keyAlias" : "cordanetworkmap",
+            # ./persistent/network-map.conf: 24
+            "keyPassword" : "example-password",
+            # ./persistent/network-map.conf: 20
+            "keyStore" : {
+                # ./persistent/network-map.conf: 21
+                "file" : "persistent/caKeyStore.jks",
+                # ./persistent/network-map.conf: 22
+                "password" : "example-password"
+            },
+            # ./persistent/network-map.conf: 26
+            "signInterval" : 15000
+        },
+        # ./persistent/network-map.conf: 34
+        "privateNetworkAutoEnrolment" : false
+    },
+    # ./persistent/network-map.conf: 38
+    # This section can be removed if the interactive shell is not required
+    "shell" : {
+        # ./persistent/network-map.conf: 41
+        "password" : "example-password",
+        # ./persistent/network-map.conf: 39
+        "sshdPort" : 20002,
+        # ./persistent/network-map.conf: 40
+        "user" : "testuser"
+    }
+}
+ {}
+[INFO ] 2019-05-21T09:58:48,712Z [main] hikari.HikariDataSource.<init> - HikariPool-1 - Started. {}
+[INFO ] 2019-05-21T09:58:51,148Z [main] persistence.SchemaMigration.doRunMigration - defaultSchemaName=PUBLIC {}
+[INFO ] 2019-05-21T09:58:51,149Z [main] persistence.SchemaMigration.doRunMigration - liquibaseSchemaName=PUBLIC {}
+[INFO ] 2019-05-21T09:58:51,149Z [main] persistence.SchemaMigration.doRunMigration - outputDefaultSchema=true {}
+[INFO ] 2019-05-21T09:58:52,044Z [main] liquibase.info - Reading from PUBLIC.DATABASECHANGELOG {}
+[INFO ] 2019-05-21T09:58:52,075Z [main] liquibase.info - Successfully acquired change log lock {}
+[INFO ] 2019-05-21T09:58:52,079Z [main] liquibase.info - Successfully released change log lock {}
+[INFO ] 2019-05-21T09:58:52,126Z [main] persistence.HibernateConfiguration.<init> - Init HibernateConfiguration for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T09:58:52,129Z [main] persistence.HibernateConfiguration.makeSessionFactoryForSchemas - Creating session factory for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T09:58:52,189Z [main] hibernate.Version.logVersion - HHH000412: Hibernate Core {[WORKING]} {}
+[INFO ] 2019-05-21T09:58:52,190Z [main] cfg.Environment.<clinit> - HHH000206: hibernate.properties not found {}
+[INFO ] 2019-05-21T09:58:52,276Z [main] common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.0.4.Final} {}
+[INFO ] 2019-05-21T09:58:52,347Z [main] internal.ConnectionProviderInitiator.initiateService - HHH000130: Instantiating explicit connection provider: net.corda.nodeapi.internal.persistence.HibernateConfiguration$NodeDatabaseConnectionProvider {}
+[INFO ] 2019-05-21T09:58:52,360Z [main] dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect {}
+[INFO ] 2019-05-21T09:58:52,392Z [main] internal.EnversServiceImpl.configure - Envers integration enabled? : true {}
+[INFO ] 2019-05-21T09:58:52,394Z [main] type.BasicTypeRegistry.register - HHH000270: Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@684e8c9d {}
+[WARN ] 2019-05-21T09:58:52,506Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[WARN ] 2019-05-21T09:58:52,510Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[WARN ] 2019-05-21T09:58:52,511Z [main] java.JavaTypeDescriptorRegistry.checkEqualsAndHashCode - HHH000481: Encountered Java type [class net.corda.nodeapi.internal.SignedNodeInfo] for which we could not locate a JavaTypeDescriptor and which does not appear to implement equals and/or hashCode.  This can lead to significant performance problems when performing equality/dirty checking involving this Java type.  Consider registering a custom JavaTypeDescriptor or at least implementing equals/hashCode. {}
+[INFO ] 2019-05-21T09:58:53,796Z [main] persistence.HibernateConfiguration.makeSessionFactoryForSchemas - Created session factory for schemas: [NetworkMapSchemaV1(name=com.r3.corda.networkmanage.shared.persistence.NetworkManagementSchemaServices, version=1)] {}
+[INFO ] 2019-05-21T09:58:53,865Z [main] migration.MigrationManager.validate - Current migration status: DB Version: 0.3, Expected Version: 0.3 {}
+[INFO ] 2019-05-21T09:58:53,881Z [main] internal.QueryTranslatorFactoryInitiator.initiateService - HHH000397: Using ASTQueryTranslatorFactory {}
+[INFO ] 2019-05-21T09:58:54,392Z [main] doorman.NetworkManagementServer.getNetworkMapService - Starting Network Map web service with minimum platform version
+[-1],
+newPKIOnly [false]
+network parameters: NetworkParameters {
+      minimumPlatformVersion=3
+      notaries=[NotaryInfo(identity=O=Notary, L=London, C=GB, validating=false)]
+      maxMessageSize=10485760
+      maxTransactionSize=10485760
+      whitelistedContractImplementations {
+        
+      }
+      eventHorizon=PT720H
+      packageOwnership {
+        
+      }
+      modifiedTime=2019-05-21T09:55:15.577Z
+      epoch=1
+  },
+and the EZM listening service on port: 20001 {}
+[INFO ] 2019-05-21T09:58:54,404Z [main] Netty Server[20001].start - Starting listening service on port:20001 ssl:disabled {}
+[INFO ] 2019-05-21T09:58:54,528Z [main] Netty Server[20001].start - Server listening on port 20001 ssl:disabled {}
+[INFO ] 2019-05-21T09:58:54,621Z [main] common.utils.validated - Constructed signing certificate chain of length 3: [CN=Corda Network Map Certificate,OU=Corda,O=Example HoldCo LLC,L=New York,C=US]->[CN=Corda Subordinate Certificate,OU=Corda,O=Example HoldCo LLC,L=New York,C=US]->[CN=Corda Root Certificate,OU=Corda,O=Example HoldCo LLC,L=New York,C=US] {}
+[INFO ] 2019-05-21T09:58:54,637Z [main] doorman.NetworkManagementServer.getNetworkMapService - starting shell {}
+[INFO ] 2019-05-21T09:58:54,643Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}
+[INFO ] 2019-05-21T09:58:54,843Z [main] eddsa.EdDSASecurityProviderRegistrar.getOrCreateProvider - getOrCreateProvider(EdDSA) created instance of net.i2p.crypto.eddsa.EdDSASecurityProvider {}
+[INFO ] 2019-05-21T09:58:54,854Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.saveNetworkParameters - Saving network parameters: NetworkParameters {
+      minimumPlatformVersion=3
+      notaries=[NotaryInfo(identity=O=Notary, L=London, C=GB, validating=false)]
+      maxMessageSize=10485760
+      maxTransactionSize=10485760
+      whitelistedContractImplementations {
+        
+      }
+      eventHorizon=PT720H
+      packageOwnership {
+        
+      }
+      modifiedTime=2019-05-21T09:55:15.577Z
+      epoch=1
+  } {}
+[INFO ] 2019-05-21T09:58:54,960Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.saveNewNetworkMap - Saving new network map to database... {}
+[INFO ] 2019-05-21T09:58:55,328Z [main] ConsolePrint.getNetworkMapService - Binding Shell SSHD server on port 20002 {}
+[INFO ] 2019-05-21T09:58:55,330Z [main] impl.PersistentNodeInfoStorage.getNodeInfosFromStaging - Retrieving all node infos from staging table. {}
+[INFO ] 2019-05-21T09:58:55,356Z [main] util.log.initialized - Logging initialized @7858ms to org.eclipse.jetty.util.log.Slf4jLog {}
+[INFO ] 2019-05-21T09:58:55,425Z [main] doorman.NetworkManagementWebServer.start - Starting network management web services... {}
+[INFO ] 2019-05-21T09:58:55,427Z [main] server.Server.doStart - jetty-9.4.z-SNAPSHOT {}
+[INFO ] 2019-05-21T09:58:55,814Z [main] handler.ContextHandler.doStart - Started o.e.j.s.ServletContextHandler@7e44f989{/,null,AVAILABLE} {}
+[INFO ] 2019-05-21T09:58:55,820Z [main] server.AbstractConnector.doStart - Started ServerConnector@701c413{HTTP/1.1,[http/1.1]}{0.0.0.0:20000} {}
+[INFO ] 2019-05-21T09:58:55,821Z [main] server.Server.doStart - Started @8324ms {}
+[INFO ] 2019-05-21T09:58:55,822Z [main] ConsolePrint.start - Network management web services started on 0.0.0.0:20000 with [NetworkMapWebService, MonitoringWebService] {}
+[INFO ] 2019-05-21T09:59:09,651Z [pool-2-thread-1] impl.PersistentNetworkMapStorage.getNodeInfoHashes - Retrieving all node info hashes from DB {}

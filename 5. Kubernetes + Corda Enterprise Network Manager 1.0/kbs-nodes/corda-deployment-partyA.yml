@@ -1,0 +1,62 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: corda-partya-pv-claim
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  selector: 
+    matchLabels:
+      purpose: partya        
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: corda-partya-service
+spec:
+  selector:
+    app: corda-partya
+  ports:
+  - name: p2p
+    protocol: TCP
+    port: 40000
+    targetPort: 40000
+  - name: rpc
+    protocol: TCP
+    port: 30004
+    targetPort: 30004
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: corda-partya-deployment
+  labels:
+    app: corda-partya
+spec:
+  replicas: 1   
+  selector:
+    matchLabels:
+      app: corda-partya
+  template:
+    metadata:
+      labels:
+        app: corda-partya
+    spec:
+      volumes:
+      - name: corda-partya-pv-storage
+        persistentVolumeClaim:
+          claimName: corda-partya-pv-claim      
+      containers:
+      - name: corda-partya
+        image: corda_party:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 40000 
+        volumeMounts:
+          - mountPath: "/opt/corda/party/workspace"
+            name: corda-partya-pv-storage             
+            
